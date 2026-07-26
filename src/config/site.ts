@@ -1,6 +1,3 @@
-// Canonical site URL. Set NEXT_PUBLIC_SITE_URL in the hosting environment
-// (e.g. https://www.lucatechnologies.com). Falls back to the Vercel-provided
-// deployment URL, then localhost for local development.
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_PROJECT_PRODUCTION_URL

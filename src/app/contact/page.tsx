@@ -24,9 +24,9 @@ export default function ContactPage() {
         ]}
       />
       <Section>
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <aside className="space-y-6">
-            <div className="rounded-3xl border border-border bg-surface p-6">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
+          <aside className="space-y-6 lg:order-none">
+            <div className="rounded-3xl border border-border bg-surface p-5 sm:p-6">
               <h2 className="text-xl font-bold text-ink">Contact details</h2>
               <dl className="mt-4 space-y-3 text-sm">
                 <div>
@@ -63,7 +63,8 @@ export default function ContactPage() {
             </div>
             <p className="text-sm leading-relaxed text-muted">
               Photos of doors, camera locations, networking closets, or problem
-              areas help us prepare a more useful consultation.
+              areas help us prepare. After you submit the form, you can email
+              images to {siteConfig.email}.
             </p>
           </aside>
           <ContactForm />

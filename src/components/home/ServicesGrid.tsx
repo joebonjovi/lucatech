@@ -12,7 +12,11 @@ export function ServicesGrid() {
           title="Residential smart home security and technology"
           description="Professional installation for cameras, doorbells, locks, Wi-Fi, and connected devices — designed for real homes, not DIY guesswork."
         />
-        <Button href="/services" variant="outline" className="shrink-0 self-start lg:self-auto">
+        <Button
+          href="/services"
+          variant="outline"
+          className="w-full shrink-0 self-start sm:w-auto lg:self-auto"
+        >
           View all services
         </Button>
       </div>

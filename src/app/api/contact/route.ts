@@ -13,7 +13,6 @@ type ContactPayload = {
   preferredContact?: string;
   purchasedEquipment?: boolean;
   description?: string;
-  // Honeypot — should always be empty for real users.
   company?: string;
 };
 
@@ -45,7 +44,7 @@ export async function POST(request: Request) {
     return Response.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  // Bot caught by the honeypot field: pretend success, send nothing.
+  // Bot honeypot
   if (clean(payload.company)) {
     return Response.json({ ok: true });
   }
@@ -78,7 +77,6 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL ?? siteConfig.email;
-  // Must be a verified domain/sender in your Resend account.
   const from = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
 
   if (!apiKey) {
@@ -140,6 +138,36 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend error:", error);
+      const detail = `${error.message ?? ""} ${JSON.stringify(error)}`.toLowerCase();
+
+      if (
+        detail.includes("only send testing emails") ||
+        detail.includes("verify a domain") ||
+        detail.includes("own email")
+      ) {
+        return Response.json(
+          {
+            error:
+              "We could not deliver your message right now. Please call or email us directly.",
+          },
+          { status: 502 },
+        );
+      }
+
+      if (
+        detail.includes("domain") ||
+        detail.includes("from") ||
+        detail.includes("not verified")
+      ) {
+        return Response.json(
+          {
+            error:
+              "We could not deliver your message right now. Please call or email us directly.",
+          },
+          { status: 502 },
+        );
+      }
+
       return Response.json(
         { error: "We could not send your message. Please try again or call us." },
         { status: 502 },

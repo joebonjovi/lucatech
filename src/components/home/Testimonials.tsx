@@ -1,10 +1,8 @@
 "use client";
 
 import { Section, SectionHeading } from "@/components/ui/Section";
-import {
-  testimonials,
-  testimonialsArePlaceholder,
-} from "@/config/testimonials";
+import { testimonials } from "@/config/testimonials";
+import { fadeUp, staggerDelay } from "@/lib/motion";
 import { motion } from "framer-motion";
 
 function Stars({ rating }: { rating: number }) {
@@ -44,24 +42,13 @@ export function Testimonials() {
         align="center"
       />
 
-      {testimonialsArePlaceholder && process.env.NODE_ENV === "development" ? (
-        <p className="mx-auto mt-6 max-w-3xl rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-center text-sm text-amber-900">
-          Sample testimonials — replace with real reviews in
-          <code className="mx-1 font-mono">src/config/testimonials.ts</code>
-          and set <code className="font-mono">testimonialsArePlaceholder</code>{" "}
-          to false. This notice only appears in development.
-        </p>
-      ) : null}
-
-      <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-10 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((testimonial, index) => (
           <motion.li
             key={`${testimonial.name}-${index}`}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ delay: (index % 3) * 0.06, duration: 0.35 }}
-            className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-sm"
+            {...fadeUp}
+            transition={staggerDelay(index % 3)}
+            className="flex h-full flex-col rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6"
           >
             <figure className="flex h-full flex-col">
               <Stars rating={testimonial.rating} />

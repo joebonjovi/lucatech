@@ -5,10 +5,15 @@ import Link from "next/link";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const socialLinks = [
+    { label: "Facebook", href: siteConfig.social.facebook },
+    { label: "Instagram", href: siteConfig.social.instagram },
+    { label: "Google", href: siteConfig.social.google },
+  ].filter((social) => social.href && social.href !== "#");
 
   return (
     <footer className="border-t border-border bg-ink text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
         <div>
           <div className="inline-flex rounded-xl bg-white px-3 py-2">
             <Image
@@ -16,7 +21,7 @@ export function Footer() {
               alt={siteConfig.logo.alt}
               width={siteConfig.logo.width}
               height={siteConfig.logo.height}
-              className="h-12 w-auto"
+              className="h-11 w-auto sm:h-12"
             />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
@@ -34,7 +39,7 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm text-white/80 transition-colors hover:text-white"
+                  className="inline-flex min-h-10 items-center text-sm text-white/80 transition-colors hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -56,32 +61,35 @@ export function Footer() {
             </li>
             <li>
               <span className="text-white/50">Email: </span>
-              <a href={siteConfig.emailHref} className="hover:text-white">
+              <a
+                href={siteConfig.emailHref}
+                className="break-all hover:text-white"
+              >
                 {siteConfig.email}
               </a>
             </li>
-            <li className="pt-2">
+            <li className="pt-2 leading-relaxed">
               <span className="text-white/50">Hours: </span>
               Weekdays {siteConfig.hours.weekdays}; Saturday{" "}
               {siteConfig.hours.saturday}; Sunday {siteConfig.hours.sunday}
             </li>
           </ul>
-          <div className="mt-5 flex gap-3">
-            {[
-              { label: "Facebook", href: siteConfig.social.facebook },
-              { label: "Instagram", href: siteConfig.social.instagram },
-              { label: "Google", href: siteConfig.social.google },
-            ].map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                className="rounded-lg border border-white/15 px-3 py-1.5 text-xs text-white/70 hover:border-white/40 hover:text-white"
-                aria-label={`${social.label} (placeholder)`}
-              >
-                {social.label}
-              </a>
-            ))}
-          </div>
+          {socialLinks.length > 0 ? (
+            <div className="mt-5 flex flex-wrap gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="rounded-lg border border-white/15 px-3 py-1.5 text-xs text-white/70 hover:border-white/40 hover:text-white"
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.label}
+                </a>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
 

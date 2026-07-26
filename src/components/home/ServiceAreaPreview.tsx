@@ -12,7 +12,11 @@ export function ServiceAreaPreview() {
           title={siteConfig.serviceAreaLabel}
           description={serviceAreaIntro}
         />
-        <Button href="/service-area" variant="secondary" className="self-start lg:justify-self-end">
+        <Button
+          href="/service-area"
+          variant="secondary"
+          className="w-full self-start sm:w-auto lg:justify-self-end"
+        >
           View service area details
         </Button>
       </div>

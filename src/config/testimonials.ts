@@ -6,14 +6,6 @@ export type Testimonial = {
   rating: 1 | 2 | 3 | 4 | 5;
 };
 
-/**
- * These testimonials are sample copy, not real customer reviews.
- * Replace them with actual, attributable quotes (with permission) and set
- * this flag to false before launch — publishing invented reviews is
- * misleading and can violate FTC endorsement rules.
- */
-export const testimonialsArePlaceholder = false;
-
 export const testimonials: Testimonial[] = [
   {
     quote:

@@ -43,18 +43,23 @@ export function PageHero({
             </ol>
           </nav>
         ) : null}
-        <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+        <h1 className="max-w-3xl text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
           {description}
         </p>
         {actions ? (
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/contact" size="lg">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Button href="/contact" size="lg" className="w-full sm:w-auto">
               {siteConfig.cta.primary}
             </Button>
-            <Button href="/services" variant="secondary" size="lg">
+            <Button
+              href="/services"
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto"
+            >
               {siteConfig.cta.secondary}
             </Button>
           </div>
@@ -76,18 +81,20 @@ export function CTABanner({
   return (
     <section className={cn("py-16 sm:py-20", className)}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-ink via-ink to-slate-800 px-6 py-10 text-white sm:px-10 sm:py-12">
+        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-ink via-ink to-slate-800 px-5 py-8 text-white sm:px-10 sm:py-12">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
                 {title}
               </h2>
-              <p className="mt-3 text-white/70">{description}</p>
+              <p className="mt-3 text-sm text-white/70 sm:text-base">
+                {description}
+              </p>
             </div>
             <Button
               href="/contact"
               size="lg"
-              className="shrink-0 bg-brand hover:bg-brand-dark"
+              className="w-full shrink-0 bg-brand hover:bg-brand-dark sm:w-auto"
             >
               {siteConfig.cta.primary}
             </Button>

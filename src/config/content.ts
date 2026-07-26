@@ -87,41 +87,6 @@ export const whyChoose = [
   "Solutions tailored to each property",
 ] as const;
 
-export const galleryPlaceholders = [
-  {
-    title: "Camera installations",
-    caption: "Outdoor and indoor camera placement",
-  },
-  {
-    title: "Doorbell installations",
-    caption: "Video doorbells at primary entrances",
-  },
-  {
-    title: "Smart locks",
-    caption: "Keypad and app-controlled entry",
-  },
-  {
-    title: "Network equipment",
-    caption: "Routers and mesh nodes placed thoughtfully",
-  },
-  {
-    title: "Clean wiring",
-    caption: "Organized cable management",
-  },
-  {
-    title: "Mesh Wi-Fi",
-    caption: "Whole-home coverage improvements",
-  },
-  {
-    title: "Organized tech areas",
-    caption: "Tidy equipment and patch points",
-  },
-  {
-    title: "Outdoor security",
-    caption: "Driveways, garages, and floodlight cameras",
-  },
-] as const;
-
 export const serviceTypeOptions = [
   "Security Camera Installation",
   "Video Doorbell Installation",

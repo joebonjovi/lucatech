@@ -31,7 +31,7 @@ export default function ServiceAreaPage() {
       <Section>
         <SectionHeading
           title={siteConfig.serviceAreaLabel}
-          description="Communities and ZIP codes below are easy to update in the site configuration file as coverage grows."
+          description="We install residential smart home security and technology throughout these communities. If your town is not listed, reach out — coverage may still be available."
         />
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-border bg-surface p-6 sm:p-8">
@@ -50,11 +50,8 @@ export default function ServiceAreaPage() {
           <div className="rounded-3xl border border-border bg-white p-6 sm:p-8 shadow-sm">
             <h2 className="text-xl font-bold text-ink">ZIP codes</h2>
             <p className="mt-2 text-sm text-muted">
-              Add or remove ZIP codes in{" "}
-              <code className="rounded bg-surface px-1.5 py-0.5 text-xs">
-                src/config/service-area.ts
-              </code>
-              .
+              Include your ZIP code when you request a consultation so we can
+              confirm coverage for your home.
             </p>
             <ul className="mt-5 flex flex-wrap gap-2">
               {serviceZips.map((zip) => (

@@ -11,17 +11,17 @@ export function FeaturedCameras() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-brand">
             Featured service
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+          <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl lg:text-4xl">
             See What Matters, From Anywhere
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
             {featuredService.longDescription}
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={featuredService.href} size="lg">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Button href={featuredService.href} size="lg" className="w-full sm:w-auto">
               Security Camera Installation
             </Button>
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-auto">
               {siteConfig.cta.primary}
             </Button>
           </div>

@@ -70,18 +70,29 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div
-        className="rounded-3xl border border-border bg-white p-8 text-center shadow-sm"
+        className="rounded-3xl border border-border bg-white p-6 text-center shadow-sm sm:p-8"
         role="status"
       >
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-soft text-brand">
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <svg
+            viewBox="0 0 24 24"
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+          >
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
-        <h2 className="mt-4 text-xl font-bold text-ink">Thanks — your message is on its way</h2>
+        <h2 className="mt-4 text-xl font-bold text-ink">
+          Thanks — your message is on its way
+        </h2>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          We received your inquiry and will follow up soon. If you need us sooner,
-          call {siteConfig.phone} or email {siteConfig.email}.
+          We received your inquiry and will follow up soon. If you need us
+          sooner, call {siteConfig.phone} or email {siteConfig.email}.
         </p>
         <button
           type="button"
@@ -99,9 +110,8 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-8"
+      className="space-y-5 rounded-3xl border border-border bg-white p-5 shadow-sm sm:p-8"
     >
-      {/* Honeypot: hidden from users, catches bots. */}
       <div aria-hidden className="hidden">
         <label htmlFor="company">Company</label>
         <input id="company" name="company" tabIndex={-1} autoComplete="off" />
@@ -117,7 +127,12 @@ export function ContactForm() {
             className={inputClass(hasError("name"))}
           />
         </Field>
-        <Field label="Phone number" htmlFor="phone" required error={hasError("phone")}>
+        <Field
+          label="Phone number"
+          htmlFor="phone"
+          required
+          error={hasError("phone")}
+        >
           <input
             id="phone"
             name="phone"
@@ -199,7 +214,10 @@ export function ContactForm() {
         </legend>
         <div className="flex flex-wrap gap-4">
           {["Phone", "Email", "Either"].map((method) => (
-            <label key={method} className="flex items-center gap-2 text-sm text-ink">
+            <label
+              key={method}
+              className="flex min-h-10 items-center gap-2 text-sm text-ink"
+            >
               <input
                 type="radio"
                 name="preferredContact"
@@ -214,21 +232,6 @@ export function ContactForm() {
         </div>
       </fieldset>
 
-      <Field
-        label="Photos (optional)"
-        htmlFor="photos"
-        hint={`Photos help us prepare. They are not sent through this form yet — please email images to ${siteConfig.email} after submitting.`}
-      >
-        <input
-          id="photos"
-          name="photos"
-          type="file"
-          accept="image/*"
-          multiple
-          className="block w-full text-sm text-muted file:mr-4 file:rounded-lg file:border-0 file:bg-brand-soft file:px-4 file:py-2 file:text-sm file:font-semibold file:text-brand"
-        />
-      </Field>
-
       <label className="flex items-start gap-3 rounded-xl border border-border bg-surface px-4 py-3 text-sm text-ink">
         <input
           type="checkbox"
@@ -236,8 +239,18 @@ export function ContactForm() {
           value="yes"
           className="mt-0.5 accent-[var(--color-blue)]"
         />
-        <span>I already purchased equipment and need professional installation.</span>
+        <span>
+          I already purchased equipment and need professional installation.
+        </span>
       </label>
+
+      <p className="text-xs leading-relaxed text-muted">
+        Have photos of doors, camera locations, or problem areas? Email them to{" "}
+        <a href={siteConfig.emailHref} className="font-medium text-brand">
+          {siteConfig.email}
+        </a>{" "}
+        after you submit.
+      </p>
 
       {status === "error" && message ? (
         <p
@@ -262,7 +275,7 @@ export function ContactForm() {
 
 function inputClass(error?: boolean) {
   return [
-    "w-full rounded-xl border bg-white px-4 py-3 text-sm text-ink outline-none transition focus:ring-2",
+    "w-full rounded-xl border bg-white px-4 py-3 text-base text-ink outline-none transition focus:ring-2 sm:text-sm",
     error
       ? "border-red-400 focus:border-red-500 focus:ring-red-500/20"
       : "border-border focus:border-brand focus:ring-brand/20",
@@ -286,7 +299,10 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={htmlFor} className="mb-2 block text-sm font-semibold text-ink">
+      <label
+        htmlFor={htmlFor}
+        className="mb-2 block text-sm font-semibold text-ink"
+      >
         {label}
         {required ? <span className="text-brand"> *</span> : null}
       </label>

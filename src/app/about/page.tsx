@@ -38,9 +38,8 @@ export default function AboutPage() {
               alarm-monitoring corporation.
             </p>
             <p className="mt-4 leading-relaxed text-muted">
-              Today we serve residential customers across {siteConfig.serviceAreaLabel}.
-              The business may expand into commercial technology systems in the
-              future; for now, this website is built for homeowners.
+              Today we serve residential customers across{" "}
+              {siteConfig.serviceAreaLabel}.
             </p>
           </div>
           <div className="rounded-3xl border border-border bg-surface p-6 sm:p-8">

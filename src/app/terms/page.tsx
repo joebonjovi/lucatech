@@ -15,7 +15,7 @@ export default function TermsPage() {
     <>
       <PageHero
         title="Terms of Use"
-        description="Placeholder website terms. Replace with counsel-reviewed language before public launch."
+        description="Terms for using the Luca Technologies website and learning about our residential installation services."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Terms" },

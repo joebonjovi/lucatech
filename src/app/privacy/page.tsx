@@ -15,7 +15,7 @@ export default function PrivacyPage() {
     <>
       <PageHero
         title="Privacy Policy"
-        description="This placeholder policy explains how we intend to handle information you share through this website. Replace with counsel-reviewed language before launch."
+        description="How we handle information you share when you contact Luca Technologies through this website."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Privacy Policy" },

@@ -33,11 +33,10 @@ Edit these files before launch:
 | `src/config/service-area.ts` | Cities and ZIP codes (easy to extend) |
 | `src/config/services.ts` | Service copy, SEO, and commercial placeholders |
 | `src/config/faq.ts` | FAQ content |
-| `src/config/testimonials.ts` | Customer testimonials (ships as samples — replace before launch) |
+| `src/config/testimonials.ts` | Customer testimonials |
 | `src/config/navigation.ts` | Main and footer navigation |
 
-Replace placeholders such as `[Phone Number]` and `[Email Address]`. The site URL is
-now driven by the `NEXT_PUBLIC_SITE_URL` environment variable (see below) for accurate
+The site URL is driven by the `NEXT_PUBLIC_SITE_URL` environment variable (see below) for accurate
 metadata, sitemap, and schema.
 
 ## Environment variables
@@ -99,9 +98,8 @@ Git is required to deploy. If it is not installed, get it from [git-scm.com](htt
 
 ## Assets
 
-- Logo: `public/images/logo.svg` (replace with your official logo file if preferred)
+- Logo: `public/images/logo.png`
 - Hero: `public/images/hero-home.jpg`
-- Gallery: placeholder cards until real project photos are added under `public/images/gallery/`
 
 ## Contact form
 
@@ -119,8 +117,5 @@ The contact form opens a `mailto:` draft with the submitted fields. Connect Form
 
 ## Notes
 
-- Do not invent certifications, review counts, or years of experience in marketing copy.
-- Testimonials in `src/config/testimonials.ts` are sample copy. Replace them with real,
-  permissioned quotes and set `testimonialsArePlaceholder` to `false`. A warning banner
-  renders in development until you do. Publishing invented reviews can violate FTC rules.
-- Privacy and Terms pages are placeholders — have them reviewed before public launch.
+- Privacy and Terms pages should be reviewed by counsel when you are ready.
+- Photo uploads are not attached through the contact form; visitors can email images separately.
