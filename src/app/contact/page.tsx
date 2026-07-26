@@ -25,7 +25,11 @@ export default function ContactPage() {
       />
       <Section>
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
-          <aside className="space-y-6 lg:order-none">
+          <div className="order-1 lg:order-2">
+            <ContactForm />
+          </div>
+
+          <aside className="order-2 space-y-6 lg:order-1">
             <div className="rounded-3xl border border-border bg-surface p-5 sm:p-6">
               <h2 className="text-xl font-bold text-ink">Contact details</h2>
               <dl className="mt-4 space-y-3 text-sm">
@@ -67,7 +71,6 @@ export default function ContactPage() {
               images to {siteConfig.email}.
             </p>
           </aside>
-          <ContactForm />
         </div>
       </Section>
     </>

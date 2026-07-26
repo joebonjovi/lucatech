@@ -24,9 +24,9 @@ export function PageHero({
         }}
         aria-hidden
       />
-      <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         {breadcrumbs && breadcrumbs.length > 0 ? (
-          <nav aria-label="Breadcrumb" className="mb-5">
+          <nav aria-label="Breadcrumb" className="mb-3 sm:mb-5">
             <ol className="flex flex-wrap items-center gap-2 text-sm text-muted">
               {breadcrumbs.map((crumb, index) => (
                 <li key={crumb.label} className="flex items-center gap-2">
@@ -46,7 +46,7 @@ export function PageHero({
         <h1 className="max-w-3xl text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl">
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+        <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted sm:mt-4 sm:text-lg">
           {description}
         </p>
         {actions ? (

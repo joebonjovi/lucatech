@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[min(92vh,52rem)] overflow-hidden bg-ink sm:min-h-[85vh]">
+    <section className="relative min-h-[78vh] overflow-hidden bg-ink sm:min-h-[85vh]">
       <Image
         src="/images/hero-home.jpg"
         alt="Modern home with professionally installed smart security technology"
@@ -18,10 +18,10 @@ export function Hero() {
         sizes="100vw"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/70 to-ink/55 sm:bg-gradient-to-r sm:from-ink/90 sm:via-ink/75 sm:to-ink/35"
+        className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/65 to-ink/50 sm:bg-gradient-to-r sm:from-ink/90 sm:via-ink/75 sm:to-ink/35"
         aria-hidden
       />
-      <div className="relative mx-auto flex min-h-[min(92vh,52rem)] max-w-6xl items-end px-4 pb-16 pt-28 sm:min-h-[85vh] sm:items-center sm:px-6 sm:py-20 lg:px-8">
+      <div className="relative mx-auto flex min-h-[78vh] max-w-6xl items-center px-4 py-12 sm:min-h-[85vh] sm:px-6 sm:py-20 lg:px-8">
         <motion.div
           className="w-full max-w-2xl text-white"
           initial={{ opacity: 0, y: 24 }}
