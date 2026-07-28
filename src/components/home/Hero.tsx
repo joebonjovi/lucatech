@@ -28,16 +28,13 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: easeOut }}
         >
-          <motion.p
-            className="mb-2 text-base font-semibold uppercase tracking-[0.12em] text-blue-300 sm:mb-3 sm:text-lg"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.08, ease: easeOut }}
-          >
-            {siteConfig.hero.eyebrow}
-          </motion.p>
-          <h1 className="text-[2.15rem] font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
-            {siteConfig.hero.headline}
+          <h1 className="tracking-tight">
+            <span className="block text-xl font-semibold leading-snug text-blue-300 sm:text-2xl lg:text-3xl">
+              {siteConfig.hero.lead}
+            </span>
+            <span className="mt-1.5 block text-[2.15rem] font-bold leading-[1.12] text-white sm:mt-2 sm:text-5xl lg:text-6xl">
+              {siteConfig.hero.headline}
+            </span>
           </h1>
           <p className="mt-4 text-base leading-relaxed text-white/80 sm:mt-5 sm:text-xl">
             {siteConfig.hero.supporting}
