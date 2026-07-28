@@ -29,7 +29,7 @@ export function Hero() {
           transition={{ duration: 0.65, ease: easeOut }}
         >
           <motion.p
-            className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-blue-300 sm:mb-4 sm:text-sm"
+            className="mb-2 text-base font-semibold uppercase tracking-[0.12em] text-blue-300 sm:mb-3 sm:text-lg"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.08, ease: easeOut }}
