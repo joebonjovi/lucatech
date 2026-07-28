@@ -34,7 +34,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.08, ease: easeOut }}
           >
-            {siteConfig.name}
+            {siteConfig.hero.eyebrow}
           </motion.p>
           <h1 className="text-[2.15rem] font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
             {siteConfig.hero.headline}

@@ -46,7 +46,8 @@ export const siteConfig = {
     contactHeading: "Tell Us About Your Home Technology Project",
   },
   hero: {
-    headline: "Make Your Home Smarter",
+    eyebrow: "Making your life easier",
+    headline: "By making your home smarter",
     supporting:
       "At Luca Technologies, making your life easier is our profession — seamlessly installing home technology without the headaches that come from a lack of expertise and specialization.",
   },
