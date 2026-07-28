@@ -263,8 +263,9 @@ export function ContactForm() {
 
       <Button
         type="submit"
+        variant="primary"
         size="lg"
-        className="w-full"
+        className="w-full bg-brand text-white hover:bg-brand-dark"
         disabled={status === "submitting"}
       >
         {status === "submitting" ? "Sending…" : "Bring my idea to life"}

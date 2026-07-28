@@ -29,7 +29,7 @@ type CommonProps = {
 };
 
 type ButtonAsButton = CommonProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> & {
     href?: undefined;
   };
 
@@ -46,7 +46,7 @@ export function Button(props: ButtonAsButton | ButtonAsLink) {
   } = props;
 
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60",
+    "inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:pointer-events-none",
     variants[variant],
     sizes[size],
     className,
@@ -60,9 +60,17 @@ export function Button(props: ButtonAsButton | ButtonAsLink) {
     );
   }
 
-  const { href: _href, ...buttonProps } = props as ButtonAsButton;
+  const {
+    href: _href,
+    children: _children,
+    className: _className,
+    variant: _variant,
+    size: _size,
+    ...buttonProps
+  } = props as ButtonAsButton;
+
   return (
-    <button className={classes} {...buttonProps}>
+    <button type="button" className={classes} {...buttonProps}>
       {children}
     </button>
   );
