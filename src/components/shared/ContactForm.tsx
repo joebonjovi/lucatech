@@ -110,7 +110,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-5 rounded-3xl border border-border bg-white p-5 shadow-sm sm:p-8"
+      className="space-y-5 overflow-hidden rounded-3xl border border-border bg-white p-5 pb-0 shadow-sm sm:p-8 sm:pb-0"
     >
       <div aria-hidden className="hidden">
         <label htmlFor="company">Company</label>
@@ -261,14 +261,37 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <Button
-        type="submit"
-        size="lg"
-        className="w-full sm:w-auto"
-        disabled={status === "submitting"}
-      >
-        {status === "submitting" ? "Sending…" : siteConfig.cta.primary}
-      </Button>
+      <div className="-mx-5 border-t border-border bg-surface px-5 py-5 sm:-mx-8 sm:px-8">
+        <Button
+          type="submit"
+          size="lg"
+          className="w-full shadow-md shadow-brand/25 hover:shadow-lg hover:shadow-brand/30"
+          disabled={status === "submitting"}
+        >
+          {status === "submitting" ? (
+            "Sending…"
+          ) : (
+            <>
+              Send my request
+              <svg
+                viewBox="0 0 20 20"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="M4 10h11M11 5l5 5-5 5" />
+              </svg>
+            </>
+          )}
+        </Button>
+        <p className="mt-3 text-center text-xs text-muted">
+          We typically follow up within one business day.
+        </p>
+      </div>
     </form>
   );
 }
