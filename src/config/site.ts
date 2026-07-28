@@ -48,7 +48,7 @@ export const siteConfig = {
   hero: {
     headline: "Make Your Home Smarter",
     supporting:
-      "Luca Technologies professionally installs security cameras, video doorbells, smart locks, Wi-Fi systems, and connected home technology.",
+      "At Luca Technologies, making your life easier is our profession — seamlessly installing home technology without the headaches that come from a lack of expertise and specialization.",
   },
 } as const;
 
