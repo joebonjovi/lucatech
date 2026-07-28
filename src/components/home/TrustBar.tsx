@@ -17,10 +17,24 @@ export function TrustBar() {
               className="flex items-center gap-3 rounded-xl border border-border bg-surface/70 px-4 py-3"
             >
               <span
-                className="inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-brand"
+                className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand"
                 aria-hidden
-              />
-              <span className="text-sm font-medium text-ink">{item}</span>
+              >
+                <svg
+                  viewBox="0 0 20 20"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M4.5 10.5 8 14l7.5-8" />
+                </svg>
+              </span>
+              <span className="text-sm font-medium leading-snug text-ink">
+                {item}
+              </span>
             </motion.li>
           ))}
         </ul>
