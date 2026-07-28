@@ -10,7 +10,7 @@ export function ServicesGrid() {
         <SectionHeading
           eyebrow="Services"
           title="Residential smart home security and technology"
-          description="Professional installation for cameras, doorbells, locks, Wi-Fi, and connected devices — designed for real homes, not DIY guesswork."
+          description="At Luca Technologies, we will never shut down your ideas. We are happy to talk through any cool idea you have — and help bring it to life."
         />
         <Button
           href="/services"
