@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
+import { whyChoose } from "@/config/content";
 import { siteConfig } from "@/config/site";
 import { easeOut } from "@/lib/motion";
 import { motion } from "framer-motion";
@@ -55,15 +56,36 @@ export function Hero() {
             <Button href="/contact" size="lg" className="w-full sm:w-auto">
               {siteConfig.cta.primary}
             </Button>
-            <Button
-              href="/services"
-              size="lg"
-              variant="secondary"
-              className="w-full border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 sm:w-auto"
-            >
-              {siteConfig.cta.secondary}
-            </Button>
+            <span className="hidden sm:inline-flex">
+              <Button
+                href="/services"
+                size="lg"
+                variant="secondary"
+                className="border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+              >
+                {siteConfig.cta.secondary}
+              </Button>
+            </span>
           </div>
+          <ul className="mt-6 space-y-2.5 text-sm text-white/85 sm:hidden">
+            {whyChoose.slice(0, 3).map((item) => (
+              <li key={item} className="flex items-center gap-2.5">
+                <svg
+                  viewBox="0 0 20 20"
+                  className="h-4 w-4 shrink-0 text-blue-300"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <path d="M4.5 10.5 8 14l7.5-8" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
           <ul className="mt-7 hidden flex-wrap gap-x-4 gap-y-2 text-xs text-white/70 sm:mt-10 sm:flex sm:gap-x-6 sm:text-sm">
             {["Cameras", "Doorbells", "Smart locks", "Wi-Fi", "Automation"].map(
               (item) => (
