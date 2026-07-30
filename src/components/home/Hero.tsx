@@ -1,11 +1,16 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { whyChoose } from "@/config/content";
 import { siteConfig } from "@/config/site";
 import { easeOut } from "@/lib/motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
+const heroHighlights = [
+  "Free estimates",
+  "Locally owned",
+  "Quick and detailed responses",
+];
 
 export function Hero() {
   return (
@@ -68,7 +73,7 @@ export function Hero() {
             </span>
           </div>
           <ul className="mt-6 space-y-2.5 text-sm text-white/85 sm:hidden">
-            {whyChoose.slice(0, 3).map((item) => (
+            {heroHighlights.map((item) => (
               <li key={item} className="flex items-center gap-2.5">
                 <svg
                   viewBox="0 0 20 20"
@@ -87,12 +92,7 @@ export function Hero() {
             ))}
           </ul>
           <ul className="mt-7 hidden flex-wrap gap-x-4 gap-y-2 text-xs text-white/70 sm:mt-10 sm:flex sm:gap-x-6 sm:text-sm">
-            {[
-              "Professional installation",
-              "Clean cable management",
-              "Personalized recommendations",
-              "Reliable local support",
-            ].map(
+            {heroHighlights.map(
               (item) => (
                 <li key={item} className="flex items-center gap-2">
                   <svg
