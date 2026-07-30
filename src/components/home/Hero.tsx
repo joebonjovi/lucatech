@@ -87,7 +87,12 @@ export function Hero() {
             ))}
           </ul>
           <ul className="mt-7 hidden flex-wrap gap-x-4 gap-y-2 text-xs text-white/70 sm:mt-10 sm:flex sm:gap-x-6 sm:text-sm">
-            {["Cameras", "Doorbells", "Smart locks", "Wi-Fi", "Automation"].map(
+            {[
+              "Professional installation",
+              "Clean cable management",
+              "Personalized recommendations",
+              "Reliable local support",
+            ].map(
               (item) => (
                 <li key={item} className="flex items-center gap-2">
                   <svg
