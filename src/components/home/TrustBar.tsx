@@ -6,18 +6,18 @@ import { motion } from "framer-motion";
 
 export function TrustBar() {
   return (
-    <section className="border-b border-border bg-white py-8 sm:py-10">
+    <section className="border-b border-border bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-5">
+        <ul className="grid grid-cols-1 divide-y divide-border sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-5 lg:divide-x">
           {trustIndicators.map((item, index) => (
             <motion.li
               key={item}
               {...fadeUp}
               transition={staggerDelay(index, 0.05)}
-              className="flex items-center gap-3 rounded-xl border border-border bg-surface/70 px-4 py-3"
+              className="flex items-center gap-3 px-2 py-4 sm:py-6 lg:justify-center lg:px-4"
             >
               <span
-                className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand"
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand"
                 aria-hidden
               >
                 <svg
@@ -32,7 +32,7 @@ export function TrustBar() {
                   <path d="M4.5 10.5 8 14l7.5-8" />
                 </svg>
               </span>
-              <span className="text-sm font-medium leading-snug text-ink">
+              <span className="text-sm font-semibold leading-snug text-ink">
                 {item}
               </span>
             </motion.li>

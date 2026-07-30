@@ -14,15 +14,19 @@ export function Process() {
         description="Every project follows a simple five-step process so homeowners know what to expect."
         align="center"
       />
-      <ol className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5">
+      <ol className="relative mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5">
+        <span
+          className="absolute left-0 right-0 top-[2.1rem] hidden h-px bg-gradient-to-r from-transparent via-border to-transparent lg:block"
+          aria-hidden
+        />
         {processSteps.map((step, index) => (
           <motion.li
             key={step.title}
             {...fadeUp}
             transition={staggerDelay(index)}
-            className="relative rounded-2xl border border-border bg-surface p-5"
+            className="relative rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-brand/30"
           >
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
+            <span className="relative z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-sm font-bold text-white ring-4 ring-white">
               {step.step}
             </span>
             <h3 className="mt-4 text-lg font-semibold text-ink">{step.title}</h3>

@@ -81,8 +81,12 @@ export function CTABanner({
   return (
     <section className={cn("py-16 sm:py-20", className)}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-ink via-ink to-slate-800 px-5 py-8 text-white sm:px-10 sm:py-12">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-ink via-ink to-slate-800 px-5 py-8 text-white sm:px-10 sm:py-12">
+          <div
+            className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/30 blur-[100px]"
+            aria-hidden
+          />
+          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
                 {title}
@@ -91,13 +95,23 @@ export function CTABanner({
                 {description}
               </p>
             </div>
-            <Button
-              href="/contact"
-              size="lg"
-              className="w-full shrink-0 bg-brand hover:bg-brand-dark sm:w-auto"
-            >
-              {siteConfig.cta.primary}
-            </Button>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+              <Button
+                href="/contact"
+                size="lg"
+                className="w-full bg-brand hover:bg-brand-dark sm:w-auto"
+              >
+                {siteConfig.cta.primary}
+              </Button>
+              <Button
+                href={siteConfig.phoneHref}
+                size="lg"
+                variant="secondary"
+                className="w-full border-white/20 bg-white/10 text-white hover:bg-white/20 sm:w-auto"
+              >
+                Call {siteConfig.phone}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
