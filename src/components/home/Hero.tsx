@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const heroHighlights = [
-  "Free estimates",
   "Owner operated",
   "Same day responses",
   "In person support",
@@ -73,12 +72,12 @@ export function Hero() {
               </Button>
             </span>
           </div>
-          <ul className="mt-6 space-y-2.5 text-sm text-white/85 sm:hidden">
+          <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-xs text-white/85 sm:mt-10 sm:gap-x-6 sm:text-sm sm:text-white/70">
             {heroHighlights.map((item) => (
-              <li key={item} className="flex items-center gap-2.5">
+              <li key={item} className="flex items-center gap-2">
                 <svg
                   viewBox="0 0 20 20"
-                  className="h-4 w-4 shrink-0 text-blue-300"
+                  className="h-3.5 w-3.5 shrink-0 text-blue-300"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
@@ -91,27 +90,6 @@ export function Hero() {
                 {item}
               </li>
             ))}
-          </ul>
-          <ul className="mt-7 hidden flex-wrap gap-x-4 gap-y-2 text-xs text-white/70 sm:mt-10 sm:flex sm:gap-x-6 sm:text-sm">
-            {heroHighlights.map(
-              (item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <svg
-                    viewBox="0 0 20 20"
-                    className="h-3.5 w-3.5 text-blue-300"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden
-                  >
-                    <path d="M4.5 10.5 8 14l7.5-8" />
-                  </svg>
-                  {item}
-                </li>
-              ),
-            )}
           </ul>
         </motion.div>
 
