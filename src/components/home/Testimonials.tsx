@@ -42,13 +42,13 @@ export function Testimonials() {
         align="center"
       />
 
-      <ul className="mt-10 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="-mx-4 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-12 sm:gap-5 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
         {testimonials.map((testimonial, index) => (
           <motion.li
             key={`${testimonial.name}-${index}`}
             {...fadeUp}
             transition={staggerDelay(index % 3)}
-            className="flex h-full flex-col rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6"
+            className="flex h-auto w-[82%] shrink-0 snap-center flex-col rounded-2xl border border-border bg-white p-5 shadow-sm sm:w-[70%] sm:p-6 md:w-auto md:shrink"
           >
             <figure className="flex h-full flex-col">
               <Stars rating={testimonial.rating} />

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[78vh] overflow-hidden bg-ink sm:min-h-[85vh]">
+    <section className="relative min-h-[72svh] overflow-hidden bg-ink sm:min-h-[85vh]">
       <Image
         src="/images/hero-home.jpg"
         alt="Modern home with professionally installed smart security technology"
@@ -26,14 +26,14 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto flex min-h-[78vh] max-w-6xl items-center px-4 py-12 sm:min-h-[85vh] sm:px-6 sm:py-20 lg:px-8">
+      <div className="relative mx-auto flex min-h-[72svh] max-w-6xl items-center px-4 py-10 sm:min-h-[85vh] sm:px-6 sm:py-20 lg:px-8">
         <motion.div
           className="w-full max-w-2xl text-white"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: easeOut }}
         >
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-white/90 backdrop-blur-sm sm:text-sm">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] font-semibold tracking-wide text-white/90 backdrop-blur-sm sm:mb-5 sm:px-4 sm:text-sm">
             <span className="relative flex h-2 w-2" aria-hidden>
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-400" />
@@ -64,7 +64,7 @@ export function Hero() {
               {siteConfig.cta.secondary}
             </Button>
           </div>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70 sm:mt-10">
+          <ul className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-xs text-white/70 sm:mt-10 sm:gap-x-6 sm:text-sm">
             {["Cameras", "Doorbells", "Smart locks", "Wi-Fi", "Automation"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-2">

@@ -28,14 +28,14 @@ export function Problems() {
         title="Home Technology Should Make Life Easier"
         description="When devices are poorly placed, weakly connected, or confusing to use, they create more stress than peace of mind. We help homeowners fix the common issues that get in the way."
       />
-      <ul className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-10 grid gap-3 sm:mt-12 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {problems.map((problem, index) => (
           <li
             key={problem.title}
-            className="group rounded-2xl border border-border bg-white p-5 shadow-sm transition-colors hover:border-brand/30"
+            className="group rounded-2xl border border-border bg-white p-4 shadow-sm transition-colors hover:border-brand/30 sm:p-5"
           >
             <span
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-surface text-muted transition-colors group-hover:bg-brand-soft group-hover:text-brand"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-surface text-muted transition-colors group-hover:bg-brand-soft group-hover:text-brand sm:h-10 sm:w-10"
               aria-hidden
             >
               <svg
@@ -61,7 +61,7 @@ export function Problems() {
         <li>
           <Link
             href="/services"
-            className="flex h-full flex-col justify-between rounded-2xl bg-gradient-to-br from-brand to-brand-dark p-5 text-white shadow-md transition-transform hover:-translate-y-0.5"
+            className="flex h-full flex-col justify-between rounded-2xl bg-gradient-to-br from-brand to-brand-dark p-4 text-white shadow-md transition-transform hover:-translate-y-0.5 sm:p-5"
           >
             <div>
               <h3 className="text-base font-semibold leading-snug">
