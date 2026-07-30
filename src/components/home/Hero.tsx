@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const heroHighlights = [
   "Owner operated",
-  "Same day responses",
+  "Same day replies",
   "In person support",
 ];
 
@@ -72,12 +72,15 @@ export function Hero() {
               </Button>
             </span>
           </div>
-          <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-xs text-white/85 sm:mt-10 sm:gap-x-6 sm:text-sm sm:text-white/70">
+          <ul className="mt-6 flex flex-wrap items-center justify-between gap-y-2 text-[11px] text-white/85 sm:mt-10 sm:justify-start sm:gap-x-6 sm:text-sm sm:text-white/70">
             {heroHighlights.map((item) => (
-              <li key={item} className="flex items-center gap-2">
+              <li
+                key={item}
+                className="flex items-center gap-1.5 whitespace-nowrap sm:gap-2"
+              >
                 <svg
                   viewBox="0 0 20 20"
-                  className="h-3.5 w-3.5 shrink-0 text-blue-300"
+                  className="h-3 w-3 shrink-0 text-blue-300 sm:h-3.5 sm:w-3.5"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
