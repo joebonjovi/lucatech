@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { serviceAreaIntro, serviceCities } from "@/config/service-area";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 export function ServiceAreaPreview() {
   return (
@@ -13,15 +14,23 @@ export function ServiceAreaPreview() {
             title={siteConfig.serviceAreaLabel}
             description={serviceAreaIntro}
           />
-          <ul className="mt-8 flex flex-wrap gap-2">
-            {serviceCities.map((city) => (
+          <ul className="mt-6 flex flex-wrap gap-2 sm:mt-8">
+            {serviceCities.map((city, index) => (
               <li
                 key={city.slug}
-                className="rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-ink"
+                className={cn(
+                  "rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-ink",
+                  index >= 8 && "hidden sm:block",
+                )}
               >
                 {city.name}
               </li>
             ))}
+            {serviceCities.length > 8 ? (
+              <li className="rounded-full border border-dashed border-border px-4 py-2 text-sm font-medium text-muted sm:hidden">
+                +{serviceCities.length - 8} more
+              </li>
+            ) : null}
           </ul>
           <div className="mt-8">
             <Button

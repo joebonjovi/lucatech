@@ -11,11 +11,10 @@ export function FAQ() {
       <SectionHeading
         eyebrow="FAQ"
         title="Common questions from homeowners"
-        description="Straightforward answers about installation, Wi-Fi, equipment, and what to expect."
         align="center"
       />
-      <div className="mx-auto mt-10 max-w-3xl">
-        <FAQAccordion />
+      <div className="mx-auto mt-8 max-w-3xl sm:mt-10">
+        <FAQAccordion items={faqs.slice(0, 5)} />
       </div>
     </Section>
   );

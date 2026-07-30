@@ -26,7 +26,6 @@ export default function ServiceAreaPage() {
           { label: "Home", href: "/" },
           { label: "Service Area" },
         ]}
-        actions
       />
       <Section>
         <SectionHeading

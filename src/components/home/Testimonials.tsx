@@ -38,12 +38,12 @@ export function Testimonials() {
       <SectionHeading
         eyebrow="Testimonials"
         title="What homeowners say"
-        description="Feedback from families around Doylestown and nearby communities who wanted their home technology installed properly the first time."
+        description="Feedback from families around Doylestown and nearby communities."
         align="center"
       />
 
-      <ul className="-mx-4 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-12 sm:gap-5 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
-        {testimonials.map((testimonial, index) => (
+      <ul className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-12 sm:gap-5 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
+        {testimonials.slice(0, 3).map((testimonial, index) => (
           <motion.li
             key={`${testimonial.name}-${index}`}
             {...fadeUp}

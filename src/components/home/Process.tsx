@@ -14,7 +14,7 @@ export function Process() {
         description="Every project follows a simple five-step process so homeowners know what to expect."
         align="center"
       />
-      <ol className="relative mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5">
+      <ol className="relative mt-8 grid gap-3 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5">
         <span
           className="absolute left-0 right-0 top-[2.1rem] hidden h-px bg-gradient-to-r from-transparent via-border to-transparent lg:block"
           aria-hidden
@@ -24,15 +24,19 @@ export function Process() {
             key={step.title}
             {...fadeUp}
             transition={staggerDelay(index)}
-            className="relative rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-brand/30"
+            className="relative flex items-start gap-4 rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-brand/30 sm:block sm:p-5"
           >
-            <span className="relative z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-sm font-bold text-white ring-4 ring-white">
+            <span className="relative z-10 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white ring-4 ring-white sm:h-11 sm:w-11">
               {step.step}
             </span>
-            <h3 className="mt-4 text-lg font-semibold text-ink">{step.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              {step.description}
-            </p>
+            <div>
+              <h3 className="text-base font-semibold text-ink sm:mt-4 sm:text-lg">
+                {step.title}
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted sm:mt-2">
+                {step.description}
+              </p>
+            </div>
           </motion.li>
         ))}
       </ol>

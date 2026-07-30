@@ -1,6 +1,6 @@
 import { CTABanner, PageHero } from "@/components/shared/PageHero";
 import { ServiceCard } from "@/components/shared/ServiceCard";
-import { Section, SectionHeading } from "@/components/ui/Section";
+import { Section } from "@/components/ui/Section";
 import { residentialServices } from "@/config/services";
 import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -22,14 +22,9 @@ export default function ServicesPage() {
           { label: "Home", href: "/" },
           { label: "Services" },
         ]}
-        actions
       />
       <Section>
-        <SectionHeading
-          title="Choose the service that fits your home"
-          description="Every project starts with understanding your property, goals, and existing technology — then installing cleanly and walking you through how everything works."
-        />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {residentialServices.map((service) => (
             <div key={service.id} id={service.slug}>
               <ServiceCard service={service} />

@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { featuredService } from "@/config/services";
-import { siteConfig } from "@/config/site";
 import { easeOut, fadeUp } from "@/lib/motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -55,7 +54,7 @@ export function FeaturedCameras() {
             {featuredService.longDescription}
           </p>
           <motion.ul {...fadeUp} className="mt-6 grid gap-2.5 sm:grid-cols-2">
-            {featuredService.benefits.map((benefit) => (
+            {featuredService.benefits.slice(0, 4).map((benefit) => (
               <li
                 key={benefit}
                 className="flex items-center gap-2.5 rounded-xl border border-border bg-white px-3.5 py-2.5 text-sm font-medium text-ink shadow-sm"
@@ -76,17 +75,9 @@ export function FeaturedCameras() {
               </li>
             ))}
           </motion.ul>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mt-8">
             <Button href={featuredService.href} size="lg" className="w-full sm:w-auto">
               Security Camera Installation
-            </Button>
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto"
-            >
-              {siteConfig.cta.primary}
             </Button>
           </div>
         </div>

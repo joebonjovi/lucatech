@@ -43,13 +43,13 @@ export const siteConfig = {
   cta: {
     primary: "Request a Free Consultation",
     secondary: "Explore Our Services",
-    contactHeading: "Tell Us About Your Home Technology Project",
+    contactHeading: "Tell Us About Your Project",
   },
   hero: {
     lead: "Making your life easier",
     headline: "By making your home smarter",
     supporting:
-      "At Luca Technologies, making your life easier is our profession — seamlessly installing home technology without the headaches that come from a lack of expertise and specialization.",
+      "Cameras, doorbells, locks, and Wi-Fi — professionally installed, cleanly wired, and set up so everything just works.",
   },
 } as const;
 

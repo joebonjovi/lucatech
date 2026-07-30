@@ -10,7 +10,7 @@ export function ServicesGrid() {
         <SectionHeading
           eyebrow="Services"
           title="Residential smart home security and technology"
-          description="At Luca Technologies, we will never shut down your ideas. We are happy to talk through any cool idea you have — and help bring it to life."
+          description="Have a cool idea? We will never shut it down — we are happy to talk it through and help bring it to life."
         />
         <Button
           href="/services"

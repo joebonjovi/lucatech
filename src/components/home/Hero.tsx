@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[72svh] overflow-hidden bg-ink sm:min-h-[85vh]">
+    <section className="relative min-h-[60svh] overflow-hidden bg-ink sm:min-h-[85vh]">
       <Image
         src="/images/hero-home.jpg"
         alt="Modern home with professionally installed smart security technology"
@@ -26,7 +26,7 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto flex min-h-[72svh] max-w-6xl items-center px-4 py-10 sm:min-h-[85vh] sm:px-6 sm:py-20 lg:px-8">
+      <div className="relative mx-auto flex min-h-[60svh] max-w-6xl items-center px-4 py-10 sm:min-h-[85vh] sm:px-6 sm:py-20 lg:px-8">
         <motion.div
           className="w-full max-w-2xl text-white"
           initial={{ opacity: 0, y: 24 }}
@@ -64,7 +64,7 @@ export function Hero() {
               {siteConfig.cta.secondary}
             </Button>
           </div>
-          <ul className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-xs text-white/70 sm:mt-10 sm:gap-x-6 sm:text-sm">
+          <ul className="mt-7 hidden flex-wrap gap-x-4 gap-y-2 text-xs text-white/70 sm:mt-10 sm:flex sm:gap-x-6 sm:text-sm">
             {["Cameras", "Doorbells", "Smart locks", "Wi-Fi", "Automation"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-2">
