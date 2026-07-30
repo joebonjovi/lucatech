@@ -49,7 +49,7 @@ export const siteConfig = {
     lead: "Making your life easier",
     headline: "By making your home smarter",
     supporting:
-      "Cameras, doorbells, locks, and Wi-Fi — professionally installed, cleanly wired, and set up so everything just works.",
+      "At Luca Technologies, making your life easier is our profession — seamlessly installing home technology that just works.",
   },
 } as const;
 
