@@ -8,8 +8,9 @@ import Image from "next/image";
 
 const heroHighlights = [
   "Free estimates",
-  "Locally owned",
-  "Quick and detailed responses",
+  "Owner operated",
+  "Same day responses",
+  "In person support",
 ];
 
 export function Hero() {
