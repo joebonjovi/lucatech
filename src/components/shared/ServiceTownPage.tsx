@@ -2,9 +2,9 @@ import { CTABanner, PageHero } from "@/components/shared/PageHero";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { ServiceIcon } from "@/components/ui/Icon";
-import { Section, SectionHeading } from "@/components/ui/Section";
-import { seoTowns, type SeoTown } from "@/config/service-area";
-import { residentialServices, type Service } from "@/config/services";
+import { Section } from "@/components/ui/Section";
+import type { SeoTown } from "@/config/service-area";
+import type { Service } from "@/config/services";
 import { siteConfig } from "@/config/site";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
@@ -34,10 +34,6 @@ export function ServiceTownPage({
   town: SeoTown;
 }) {
   const zipLabel = town.zips.join(" and ");
-  const otherTowns = seoTowns.filter((t) => t.slug !== town.slug);
-  const otherServices = residentialServices.filter(
-    (s) => s.id !== service.id,
-  );
 
   return (
     <>
@@ -157,48 +153,6 @@ export function ServiceTownPage({
               .
             </p>
           </aside>
-        </div>
-      </Section>
-      <Section tone="surface" className="border-t border-border">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <SectionHeading
-              as="h2"
-              eyebrow="Nearby"
-              title={`${service.shortTitle} in nearby towns`}
-            />
-            <ul className="mt-6 flex flex-wrap gap-2.5">
-              {otherTowns.map((t) => (
-                <li key={t.slug}>
-                  <Link
-                    href={townHref(service, t)}
-                    className="inline-flex rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-brand/40 hover:text-brand"
-                  >
-                    {t.name}, PA
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <SectionHeading
-              as="h2"
-              eyebrow="More services"
-              title={`Other services in ${town.name}`}
-            />
-            <ul className="mt-6 flex flex-wrap gap-2.5">
-              {otherServices.map((s) => (
-                <li key={s.id}>
-                  <Link
-                    href={`${s.href}/${town.slug}`}
-                    className="inline-flex rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-brand/40 hover:text-brand"
-                  >
-                    {s.shortTitle}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </Section>
       <CTABanner

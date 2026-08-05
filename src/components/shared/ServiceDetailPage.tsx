@@ -2,14 +2,12 @@ import { CTABanner, PageHero } from "@/components/shared/PageHero";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { ServiceIcon } from "@/components/ui/Icon";
-import { Section, SectionHeading } from "@/components/ui/Section";
-import { seoTowns } from "@/config/service-area";
+import { Section } from "@/components/ui/Section";
 import type { Service } from "@/config/services";
 import { siteConfig } from "@/config/site";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export function buildServiceMetadata(service: Service): Metadata {
   return buildPageMetadata({
@@ -90,25 +88,6 @@ export function ServiceDetailPage({ service }: { service: Service }) {
             </p>
           </aside>
         </div>
-      </Section>
-      <Section tone="surface" className="border-t border-border">
-        <SectionHeading
-          eyebrow="Service areas"
-          title={`${service.shortTitle} near you`}
-          description={`We provide ${service.title.toLowerCase()} throughout Bucks County and Montgomery County, PA. Choose your town to learn more.`}
-        />
-        <ul className="mt-8 flex flex-wrap gap-2.5">
-          {seoTowns.map((town) => (
-            <li key={town.slug}>
-              <Link
-                href={`${service.href}/${town.slug}`}
-                className="inline-flex rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-brand/40 hover:text-brand"
-              >
-                {service.shortTitle} in {town.name}, PA
-              </Link>
-            </li>
-          ))}
-        </ul>
       </Section>
       <CTABanner />
     </>
