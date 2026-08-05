@@ -1,7 +1,7 @@
 import { ServiceCard } from "@/components/shared/ServiceCard";
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { residentialServices } from "@/config/services";
+import { featuredServices } from "@/config/services";
 
 export function ServicesGrid() {
   return (
@@ -20,8 +20,8 @@ export function ServicesGrid() {
           View all services
         </Button>
       </div>
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {residentialServices.map((service) => (
+      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {featuredServices.map((service) => (
           <div key={service.id} id={service.slug}>
             <ServiceCard service={service} />
           </div>

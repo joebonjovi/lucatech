@@ -23,22 +23,26 @@ export type ServiceIconName =
   | "doorbell"
   | "lock"
   | "wifi"
-  | "garage"
+  | "network"
   | "integration"
-  | "upgrade"
-  | "troubleshoot";
+  | "automation"
+  | "lighting"
+  | "audio"
+  | "speaker"
+  | "theater";
 
 /**
- * Residential services are shown site-wide.
- * Commercial entries are reserved for future pages — filter by audience.
+ * Residential services are shown site-wide. Each service has a generic page
+ * at its top-level href plus one page per SEO town (see service-area.ts).
+ * Services with `featured: true` appear on the home page grid.
  */
 export const services: Service[] = [
   {
-    id: "security-cameras",
+    id: "security-camera-installation",
     title: "Security Camera Installation",
     shortTitle: "Security Cameras",
-    slug: "security-cameras",
-    href: "/services/security-cameras",
+    slug: "security-camera-installation",
+    href: "/security-camera-installation",
     description:
       "Professional placement and setup of indoor and outdoor cameras for entrances, garages, driveways, backyards, and other important areas.",
     longDescription:
@@ -63,11 +67,11 @@ export const services: Service[] = [
     },
   },
   {
-    id: "video-doorbell",
+    id: "video-doorbell-installation",
     title: "Video Doorbell Installation",
     shortTitle: "Video Doorbells",
-    slug: "video-doorbell",
-    href: "/services/video-doorbell",
+    slug: "video-doorbell-installation",
+    href: "/video-doorbell-installation",
     description:
       "Installation and configuration of wired or wireless video doorbells with mobile alerts and remote access.",
     longDescription:
@@ -80,6 +84,7 @@ export const services: Service[] = [
       "App setup and walkthrough",
     ],
     audience: "residential",
+    featured: true,
     icon: "doorbell",
     seo: {
       title: "Video Doorbell Installation | Luca Technologies",
@@ -88,11 +93,11 @@ export const services: Service[] = [
     },
   },
   {
-    id: "smart-locks",
+    id: "smart-lock-installation",
     title: "Smart Lock Installation",
     shortTitle: "Smart Locks",
-    slug: "smart-locks",
-    href: "/services/smart-locks",
+    slug: "smart-lock-installation",
+    href: "/smart-lock-installation",
     description:
       "Installation and setup of keypad, app-controlled, and connected smart locks.",
     longDescription:
@@ -105,6 +110,7 @@ export const services: Service[] = [
       "Guidance on everyday use",
     ],
     audience: "residential",
+    featured: true,
     icon: "lock",
     seo: {
       title: "Smart Lock Installation | Luca Technologies",
@@ -113,15 +119,42 @@ export const services: Service[] = [
     },
   },
   {
-    id: "home-wifi",
-    title: "Home Wi-Fi and Mesh Networking",
-    shortTitle: "Home Wi-Fi",
-    slug: "home-wifi",
-    href: "/services/home-wifi",
+    id: "smart-home-installation",
+    title: "Smart Home Installation",
+    shortTitle: "Smart Home",
+    slug: "smart-home-installation",
+    href: "/smart-home-installation",
     description:
-      "Improve coverage, eliminate dead zones, and support cameras, streaming devices, home offices, and connected technology.",
+      "Complete smart home setup — cameras, locks, lighting, thermostats, sensors, and voice assistants working together as one simple system.",
     longDescription:
-      "Reliable Wi-Fi is the foundation of a connected home. We plan and install mesh and whole-home networking so cameras, streaming, work-from-home setups, and smart devices stay connected.",
+      "Bring your home technology together so it feels simple to use. We plan, install, and configure smart home devices — cameras, locks, lighting, thermostats, sensors, and voice assistants — and we are honest when brands or ecosystems do not work well together.",
+    benefits: [
+      "Whole-home planning and setup",
+      "Compatible device selection",
+      "Voice assistant pairing when supported",
+      "Single-app control where possible",
+      "Clear guidance on ecosystem limits",
+      "Homeowner-friendly walkthrough",
+    ],
+    audience: "residential",
+    featured: true,
+    icon: "integration",
+    seo: {
+      title: "Smart Home Installation | Luca Technologies",
+      description:
+        "Professional smart home installation for homeowners. Cameras, locks, lighting, thermostats, and voice assistants set up to work together.",
+    },
+  },
+  {
+    id: "home-wifi-installation",
+    title: "Home Wi-Fi Installation",
+    shortTitle: "Home Wi-Fi",
+    slug: "home-wifi-installation",
+    href: "/home-wifi-installation",
+    description:
+      "Mesh and whole-home Wi-Fi that eliminates dead zones and supports cameras, streaming, home offices, and connected devices.",
+    longDescription:
+      "Reliable Wi-Fi is the foundation of a connected home. We plan and install mesh and whole-home Wi-Fi so cameras, streaming, work-from-home setups, and smart devices stay connected in every room.",
     benefits: [
       "Dead zone assessment",
       "Mesh and whole-home coverage",
@@ -130,108 +163,164 @@ export const services: Service[] = [
       "Network setup and testing",
     ],
     audience: "residential",
+    featured: true,
     icon: "wifi",
     seo: {
-      title: "Home Wi-Fi & Mesh Network Installation | Luca Technologies",
+      title: "Home Wi-Fi Installation | Luca Technologies",
       description:
         "Home Wi-Fi and mesh network installation to eliminate dead zones and support cameras, streaming, and smart devices.",
     },
   },
   {
-    id: "smart-garage",
-    title: "Smart Garage and Entry Technology",
-    shortTitle: "Smart Garage & Entry",
-    slug: "smart-garage",
-    href: "/services#smart-garage",
+    id: "home-theater-installation",
+    title: "Home Theater Installation",
+    shortTitle: "Home Theater",
+    slug: "home-theater-installation",
+    href: "/home-theater-installation",
     description:
-      "Install and configure connected garage controllers, entry sensors, and related security technology.",
+      "TV mounting, surround sound, projectors, and media rooms — installed cleanly with hidden wiring and simple controls.",
     longDescription:
-      "Protect and monitor garages and entry points with connected controllers, sensors, and related security technology tailored to your home.",
+      "Turn a living room or basement into a place people actually want to watch movies. We mount TVs, install projectors and screens, set up surround sound, hide the wiring, and configure everything so one remote or app runs the show.",
     benefits: [
-      "Connected garage controllers",
-      "Entry sensors",
-      "Integration with existing apps when compatible",
-      "Practical placement and setup",
+      "TV mounting with concealed wiring",
+      "Surround sound speaker placement",
+      "Projector and screen installation",
+      "Receiver and source configuration",
+      "Simple remote or app control",
+      "Calibration and walkthrough",
     ],
     audience: "residential",
-    icon: "garage",
+    featured: true,
+    icon: "theater",
     seo: {
-      title: "Smart Garage & Entry Technology | Luca Technologies",
+      title: "Home Theater Installation | Luca Technologies",
       description:
-        "Smart garage door technology and entry sensor installation for residential homes.",
+        "Professional home theater installation — TV mounting, surround sound, projectors, and hidden wiring for homeowners.",
     },
   },
   {
-    id: "smart-home-integration",
-    title: "Smart Home Device Integration",
-    shortTitle: "Smart Home Integration",
-    slug: "smart-home-integration",
-    href: "/services/smart-home-integration",
+    id: "smart-lighting-installation",
+    title: "Smart Lighting Installation",
+    shortTitle: "Smart Lighting",
+    slug: "smart-lighting-installation",
+    href: "/smart-lighting-installation",
     description:
-      "Connect compatible cameras, locks, lighting, thermostats, sensors, and voice assistants into a simpler system.",
+      "Smart switches, dimmers, and bulbs with schedules, scenes, and app or voice control throughout your home.",
     longDescription:
-      "Bring compatible devices together so your home technology feels simpler to use. We help with setup and integration across cameras, locks, lighting, thermostats, sensors, and voice assistants — and we are honest when brands or ecosystems do not work well together.",
+      "Control your lighting from your phone, set schedules that make the house look lived-in, and dim the lights for movie night without leaving the couch. We install smart switches, dimmers, and bulbs and configure scenes that fit how you actually live.",
     benefits: [
-      "Compatible device setup",
-      "Simpler everyday control",
-      "Voice assistant pairing when supported",
-      "Clear guidance on ecosystem limits",
-      "Homeowner-friendly walkthrough",
+      "Smart switch and dimmer installation",
+      "Scene and schedule setup",
+      "App and voice control",
+      "Away-from-home lighting for security",
+      "Works with existing fixtures",
     ],
     audience: "residential",
-    icon: "integration",
+    icon: "lighting",
     seo: {
-      title: "Smart Home Installation & Integration | Luca Technologies",
+      title: "Smart Lighting Installation | Luca Technologies",
       description:
-        "Smart home device setup and integration for homeowners. Connect compatible cameras, locks, lighting, and more.",
+        "Smart lighting installation for homeowners. Smart switches, dimmers, schedules, and voice control professionally set up.",
     },
   },
   {
-    id: "security-upgrades",
-    title: "Security System Upgrades",
-    shortTitle: "System Upgrades",
-    slug: "security-upgrades",
-    href: "/services#security-upgrades",
+    id: "home-network-installation",
+    title: "Home Network Installation",
+    shortTitle: "Home Networking",
+    slug: "home-network-installation",
+    href: "/home-network-installation",
     description:
-      "Upgrade outdated cameras, networking equipment, wiring, recorders, and smart devices.",
+      "Wired ethernet runs, network racks, switches, and access points for fast, reliable connections everywhere.",
     longDescription:
-      "Refresh older cameras, networking gear, wiring, recorders, and smart devices with practical upgrades that improve reliability and usability.",
+      "Some things deserve a wire. We run ethernet to offices, TVs, cameras, and access points, install switches and organized network equipment, and build home networks that stay fast and reliable as you add devices.",
     benefits: [
-      "Camera and recorder upgrades",
-      "Networking equipment updates",
-      "Wiring improvements",
-      "Phased upgrade options",
+      "Ethernet cable runs",
+      "Switch and router setup",
+      "Wired access point placement",
+      "Organized equipment and cable management",
+      "Speed and reliability testing",
     ],
     audience: "residential",
-    icon: "upgrade",
+    icon: "network",
     seo: {
-      title: "Security System Upgrades | Luca Technologies",
+      title: "Home Network Installation | Luca Technologies",
       description:
-        "Upgrade outdated home security cameras, networking, and smart devices with professional residential installation.",
+        "Home network installation including ethernet runs, switches, and access points for fast, reliable whole-home connectivity.",
     },
   },
   {
-    id: "troubleshooting",
-    title: "Smart Home Troubleshooting",
-    shortTitle: "Troubleshooting",
-    slug: "troubleshooting",
-    href: "/services#troubleshooting",
+    id: "home-automation",
+    title: "Home Automation",
+    shortTitle: "Home Automation",
+    slug: "home-automation",
+    href: "/home-automation",
     description:
-      "Diagnose connection problems, device failures, poor Wi-Fi, app issues, and unreliable existing installations.",
+      "Routines and automations that connect your devices — lights, locks, thermostats, and cameras responding automatically.",
     longDescription:
-      "Already have devices that will not stay online, apps that fail, or a DIY install that never quite worked? We diagnose and help get your system back on track.",
+      "Make your home respond to you. We build automations and routines that tie your devices together — lights that turn on when you arrive, doors that lock at bedtime, thermostats that adjust on their own — using the platforms and devices you already trust.",
     benefits: [
-      "Connection and app diagnostics",
-      "Wi-Fi and coverage issues",
-      "Device failure assessment",
-      "Unreliable install remediation",
+      "Custom routines and schedules",
+      "Arrival and departure automations",
+      "Cross-device triggers",
+      "Voice assistant integration",
+      "Practical, reliable configurations",
     ],
     audience: "residential",
-    icon: "troubleshoot",
+    icon: "automation",
     seo: {
-      title: "Smart Home Troubleshooting | Luca Technologies",
+      title: "Home Automation Services | Luca Technologies",
       description:
-        "Troubleshoot smart home systems, Wi-Fi issues, app problems, and unreliable DIY installations.",
+        "Home automation setup for homeowners. Routines connecting lights, locks, thermostats, and cameras — professionally configured.",
+    },
+  },
+  {
+    id: "home-audio-installation",
+    title: "Home Audio Installation",
+    shortTitle: "Home Audio",
+    slug: "home-audio-installation",
+    href: "/home-audio-installation",
+    description:
+      "Whole-home and multi-room audio systems with clean installation and easy streaming control.",
+    longDescription:
+      "Music in the kitchen, on the patio, and in the living room — all from your phone. We design and install whole-home and multi-room audio systems, wire them cleanly, and set up streaming so playing music anywhere is effortless.",
+    benefits: [
+      "Multi-room audio design",
+      "In-ceiling and on-wall options",
+      "Streaming service setup",
+      "Clean, concealed wiring",
+      "Zone control from your phone",
+    ],
+    audience: "residential",
+    icon: "audio",
+    seo: {
+      title: "Home Audio Installation | Luca Technologies",
+      description:
+        "Whole-home and multi-room audio installation with clean wiring and simple streaming control for homeowners.",
+    },
+  },
+  {
+    id: "home-speaker-installation",
+    title: "Home Speaker Installation",
+    shortTitle: "Speaker Installation",
+    slug: "home-speaker-installation",
+    href: "/home-speaker-installation",
+    description:
+      "In-ceiling, in-wall, bookshelf, and outdoor speakers — mounted, wired, and tuned properly.",
+    longDescription:
+      "Great speakers only sound great when they are placed and installed well. We mount and wire in-ceiling, in-wall, bookshelf, and outdoor speakers, connect them to your amplifier or streaming system, and tune everything for the room.",
+    benefits: [
+      "In-ceiling and in-wall installation",
+      "Outdoor and patio speakers",
+      "Proper placement and mounting",
+      "Amplifier and receiver hookup",
+      "Concealed speaker wiring",
+    ],
+    audience: "residential",
+    icon: "speaker",
+    seo: {
+      title: "Home Speaker Installation | Luca Technologies",
+      description:
+        "Professional speaker installation — in-ceiling, in-wall, and outdoor speakers mounted, wired, and tuned for your home.",
     },
   },
 ];
@@ -268,6 +357,9 @@ export const commercialServicesFuture = [
 export const residentialServices = services.filter(
   (s) => s.audience === "residential",
 );
+
+/** Services shown on the home page grid. */
+export const featuredServices = residentialServices.filter((s) => s.featured);
 
 export const featuredService =
   services.find((s) => s.featured) ?? services[0];

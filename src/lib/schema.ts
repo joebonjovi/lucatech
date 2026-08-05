@@ -45,6 +45,7 @@ export function serviceSchema(service: {
   title: string;
   description: string;
   href: string;
+  areaServed?: { city: string; zips: readonly string[] };
 }) {
   return {
     "@context": "https://schema.org",
@@ -57,7 +58,24 @@ export function serviceSchema(service: {
       name: siteConfig.name,
       url: absoluteUrl("/"),
     },
-    areaServed: siteConfig.serviceAreaLabel,
+    areaServed: service.areaServed
+      ? [
+          {
+            "@type": "City",
+            name: service.areaServed.city,
+            address: {
+              "@type": "PostalAddress",
+              addressRegion: "PA",
+              addressCountry: "US",
+            },
+          },
+          ...service.areaServed.zips.map((zip) => ({
+            "@type": "PostalCode",
+            name: zip,
+            addressCountry: "US",
+          })),
+        ]
+      : siteConfig.serviceAreaLabel,
     serviceType: service.title,
   };
 }

@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = buildPageMetadata({
   title: "Smart Home & Security Installation Services | Luca Technologies",
   description:
-    "Residential services including security camera installation, video doorbells, smart locks, home Wi-Fi, and smart home integration in Doylestown, PA and surrounding communities.",
+    "Residential services including security cameras, video doorbells, smart locks, smart lighting, home Wi-Fi and networking, home automation, and home theater and audio installation in Doylestown, PA and surrounding communities.",
   path: "/services",
 });
 
@@ -17,7 +17,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         title="Residential smart home security services"
-        description="From security cameras and video doorbells to mesh Wi-Fi and device integration, Luca Technologies installs and configures connected home technology for homeowners."
+        description="From security cameras, video doorbells, and smart locks to home Wi-Fi, automation, and home theater, Luca Technologies installs and configures connected home technology for homeowners."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services" },

@@ -31,11 +31,12 @@ const paths: Record<ServiceIconName, ReactNode> = {
       <circle cx="14.5" cy="22" r="1.3" fill="currentColor" stroke="none" />
     </>
   ),
-  garage: (
+  network: (
     <>
-      <path d="M4 12 L14.5 4.5 L25 12" />
-      <path d="M6.5 11.2V23h16V11.2" />
-      <path d="M9 15h11M9 18.5h11M9 22h11" />
+      <circle cx="14.5" cy="6.5" r="2.6" />
+      <circle cx="6" cy="22" r="2.6" />
+      <circle cx="23" cy="22" r="2.6" />
+      <path d="M13.2 8.8 7.3 19.7M15.8 8.8l5.9 10.9M8.7 22h11.6" />
     </>
   ),
   integration: (
@@ -47,18 +48,41 @@ const paths: Record<ServiceIconName, ReactNode> = {
       <path d="M11 8h7M8 11v7M21 11v7M11 21h7" />
     </>
   ),
-  upgrade: (
+  automation: (
     <>
-      <path d="M14.5 22V8" />
-      <path d="M9 13l5.5-5.5L20 13" />
-      <path d="M6 22h17" />
+      <path d="M5 8.5h4M13.5 8.5H24" />
+      <circle cx="11.2" cy="8.5" r="2.3" />
+      <path d="M5 14.5h11M20.5 14.5H24" />
+      <circle cx="18.2" cy="14.5" r="2.3" />
+      <path d="M5 20.5h2.5M12 20.5h12" />
+      <circle cx="9.7" cy="20.5" r="2.3" />
     </>
   ),
-  troubleshoot: (
+  lighting: (
     <>
-      <circle cx="12" cy="12" r="7.5" />
-      <path d="M17.5 17.5 23 23" />
-      <path d="M12 9v4M12 16.2h.01" />
+      <path d="M14.5 3.5a7 7 0 0 1 4.1 12.7c-.95.7-1.6 1.75-1.6 2.9h-5c0-1.15-.65-2.2-1.6-2.9A7 7 0 0 1 14.5 3.5z" />
+      <path d="M12 22.3h5M12.8 25.3h3.4" />
+    </>
+  ),
+  audio: (
+    <>
+      <path d="M5.5 11.5h3.7l4.8-4.3v14.6l-4.8-4.3H5.5z" />
+      <path d="M18 10.7a5.4 5.4 0 0 1 0 7.6" />
+      <path d="M21 8a9.2 9.2 0 0 1 0 13" />
+    </>
+  ),
+  speaker: (
+    <>
+      <rect x="8" y="3.5" width="13" height="22" rx="2.5" />
+      <circle cx="14.5" cy="9.5" r="2" />
+      <circle cx="14.5" cy="18.5" r="3.6" />
+    </>
+  ),
+  theater: (
+    <>
+      <rect x="4" y="5.5" width="21" height="13.5" rx="2" />
+      <path d="M12.5 9v6.5l5.5-3.25z" />
+      <path d="M10 23.5h9" />
     </>
   ),
 };

@@ -1,7 +1,36 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    // Old /services/* detail URLs moved to top-level service pages.
+    return [
+      {
+        source: "/services/security-cameras",
+        destination: "/security-camera-installation",
+        permanent: true,
+      },
+      {
+        source: "/services/video-doorbell",
+        destination: "/video-doorbell-installation",
+        permanent: true,
+      },
+      {
+        source: "/services/smart-locks",
+        destination: "/smart-lock-installation",
+        permanent: true,
+      },
+      {
+        source: "/services/home-wifi",
+        destination: "/home-wifi-installation",
+        permanent: true,
+      },
+      {
+        source: "/services/smart-home-integration",
+        destination: "/smart-home-installation",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
