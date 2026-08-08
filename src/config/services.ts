@@ -1,5 +1,10 @@
 export type ServiceAudience = "residential" | "commercial";
 
+export type ServiceImage = {
+  src: string;
+  alt: string;
+};
+
 export type Service = {
   id: string;
   title: string;
@@ -12,6 +17,7 @@ export type Service = {
   audience: ServiceAudience;
   featured?: boolean;
   icon: ServiceIconName;
+  images?: ServiceImage[];
   seo: {
     title: string;
     description: string;
@@ -60,6 +66,16 @@ export const services: Service[] = [
     audience: "residential",
     featured: true,
     icon: "camera",
+    images: [
+      {
+        src: "/images/projects/exterior-install.png",
+        alt: "Luca Technologies installing outdoor home technology from a ladder",
+      },
+      {
+        src: "/images/projects/exterior-install-close.png",
+        alt: "Close-up of exterior smart home installation work under a balcony",
+      },
+    ],
     seo: {
       title: "Home Security Camera Installation | Luca Technologies",
       description:
@@ -86,6 +102,12 @@ export const services: Service[] = [
     audience: "residential",
     featured: true,
     icon: "doorbell",
+    images: [
+      {
+        src: "/images/projects/video-doorbell-install.png",
+        alt: "Installing a video doorbell on a front door with a power drill",
+      },
+    ],
     seo: {
       title: "Video Doorbell Installation | Luca Technologies",
       description:
@@ -139,6 +161,16 @@ export const services: Service[] = [
     audience: "residential",
     featured: true,
     icon: "integration",
+    images: [
+      {
+        src: "/images/projects/ceiling-device-install.png",
+        alt: "Installing a ceiling smart home device during a residential project",
+      },
+      {
+        src: "/images/projects/attic-audio-setup.png",
+        alt: "Configuring attic equipment for a connected home",
+      },
+    ],
     seo: {
       title: "Smart Home Installation | Luca Technologies",
       description:
@@ -165,6 +197,16 @@ export const services: Service[] = [
     audience: "residential",
     featured: true,
     icon: "wifi",
+    images: [
+      {
+        src: "/images/projects/network-wiring.png",
+        alt: "Organizing and terminating home network wiring at a structured media panel",
+      },
+      {
+        src: "/images/projects/wiring-diagnostics.png",
+        alt: "Testing home low-voltage wiring with a diagnostic tool",
+      },
+    ],
     seo: {
       title: "Home Wi-Fi Installation | Luca Technologies",
       description:
@@ -217,6 +259,12 @@ export const services: Service[] = [
     ],
     audience: "residential",
     icon: "lighting",
+    images: [
+      {
+        src: "/images/projects/ceiling-device-install.png",
+        alt: "Ceiling device installation for connected home lighting and technology",
+      },
+    ],
     seo: {
       title: "Smart Lighting Installation | Luca Technologies",
       description:
@@ -242,6 +290,16 @@ export const services: Service[] = [
     ],
     audience: "residential",
     icon: "network",
+    images: [
+      {
+        src: "/images/projects/network-wiring.png",
+        alt: "Structured home network wiring being terminated and organized",
+      },
+      {
+        src: "/images/projects/wiring-diagnostics.png",
+        alt: "Testing punch-down wiring with a diagnostic tool",
+      },
+    ],
     seo: {
       title: "Home Network Installation | Luca Technologies",
       description:
@@ -292,6 +350,12 @@ export const services: Service[] = [
     ],
     audience: "residential",
     icon: "audio",
+    images: [
+      {
+        src: "/images/projects/attic-audio-setup.png",
+        alt: "Configuring attic audio equipment for a whole-home sound system",
+      },
+    ],
     seo: {
       title: "Home Audio Installation | Luca Technologies",
       description:
@@ -317,6 +381,12 @@ export const services: Service[] = [
     ],
     audience: "residential",
     icon: "speaker",
+    images: [
+      {
+        src: "/images/projects/ceiling-device-install.png",
+        alt: "Installing an in-ceiling speaker or connected ceiling device",
+      },
+    ],
     seo: {
       title: "Home Speaker Installation | Luca Technologies",
       description:

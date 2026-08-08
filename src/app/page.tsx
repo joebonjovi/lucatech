@@ -2,6 +2,7 @@ import { FeaturedCameras } from "@/components/home/FeaturedCameras";
 import { FAQ } from "@/components/home/FAQ";
 import { Hero } from "@/components/home/Hero";
 import { Process } from "@/components/home/Process";
+import { ProjectGallery } from "@/components/home/ProjectGallery";
 import { ServiceAreaPreview } from "@/components/home/ServiceAreaPreview";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Hero />
       <ServicesGrid />
       <FeaturedCameras />
+      <ProjectGallery />
       <Process />
       <Testimonials />
       <ServiceAreaPreview />
