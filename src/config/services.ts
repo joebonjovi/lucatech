@@ -40,7 +40,7 @@ export type ServiceIconName =
 /**
  * Residential services are shown site-wide. Each service has a generic page
  * at its top-level href plus one page per SEO town (see service-area.ts).
- * Services with `featured: true` appear on the home page grid.
+ * The home page grid features services that have project photos (`images`).
  */
 export const services: Service[] = [
   {
@@ -132,7 +132,6 @@ export const services: Service[] = [
       "Guidance on everyday use",
     ],
     audience: "residential",
-    featured: true,
     icon: "lock",
     seo: {
       title: "Smart Lock Installation | Luca Technologies",
@@ -142,40 +141,53 @@ export const services: Service[] = [
   },
   {
     id: "smart-home-installation",
-    title: "Smart Home Installation & Automation",
+    title: "Smart Home Installation",
     shortTitle: "Smart Home",
     slug: "smart-home-installation",
     href: "/smart-home-installation",
     description:
-      "Install and connect smart devices, then set up automations so lights, locks, thermostats, and cameras work together without the hassle.",
+      "Complete smart home setup — cameras, locks, lighting, thermostats, sensors, and voice assistants working together as one simple system.",
     longDescription:
-      "Bring your home technology together so it feels simple to use. We plan, install, and configure smart home devices — cameras, locks, lighting, thermostats, sensors, and voice assistants — then build practical automations and routines on top. Lights that turn on when you arrive, doors that lock at bedtime, thermostats that adjust on their own. And we are honest when brands or ecosystems do not work well together.",
+      "Bring your home technology together so it feels simple to use. We plan, install, and configure smart home devices — cameras, locks, lighting, thermostats, sensors, and voice assistants — and we are honest when brands or ecosystems do not work well together.",
     benefits: [
       "Whole-home planning and setup",
       "Compatible device selection",
-      "Custom routines and schedules",
-      "Arrival and departure automations",
       "Voice assistant pairing when supported",
+      "Single-app control where possible",
       "Clear guidance on ecosystem limits",
       "Homeowner-friendly walkthrough",
     ],
     audience: "residential",
-    featured: true,
     icon: "integration",
-    images: [
-      {
-        src: "/images/projects/ceiling-device-install.png",
-        alt: "Installing a ceiling smart home device during a residential project",
-      },
-      {
-        src: "/images/projects/attic-audio-setup.png",
-        alt: "Configuring attic equipment for a connected home",
-      },
-    ],
     seo: {
-      title: "Smart Home Installation & Automation | Luca Technologies",
+      title: "Smart Home Installation | Luca Technologies",
       description:
-        "Smart home installation and automation for homeowners. Devices installed, connected, and automated so your home responds the way you want.",
+        "Professional smart home installation for homeowners. Cameras, locks, lighting, thermostats, and voice assistants set up to work together.",
+    },
+  },
+  {
+    id: "home-automation",
+    title: "Home Automation",
+    shortTitle: "Home Automation",
+    slug: "home-automation",
+    href: "/home-automation",
+    description:
+      "Routines and automations that connect your devices — lights, locks, thermostats, and cameras responding automatically.",
+    longDescription:
+      "Make your home respond to you. We build automations and routines that tie your devices together — lights that turn on when you arrive, doors that lock at bedtime, thermostats that adjust on their own — using the platforms and devices you already trust.",
+    benefits: [
+      "Custom routines and schedules",
+      "Arrival and departure automations",
+      "Cross-device triggers",
+      "Voice assistant integration",
+      "Practical, reliable configurations",
+    ],
+    audience: "residential",
+    icon: "automation",
+    seo: {
+      title: "Home Automation Services | Luca Technologies",
+      description:
+        "Home automation setup for homeowners. Routines connecting lights, locks, thermostats, and cameras — professionally configured.",
     },
   },
   {
@@ -235,7 +247,6 @@ export const services: Service[] = [
       "Calibration and walkthrough",
     ],
     audience: "residential",
-    featured: true,
     icon: "theater",
     seo: {
       title: "Home Theater Installation | Luca Technologies",
@@ -262,12 +273,6 @@ export const services: Service[] = [
     ],
     audience: "residential",
     icon: "lighting",
-    images: [
-      {
-        src: "/images/projects/ceiling-device-install.png",
-        alt: "Ceiling device installation for connected home lighting and technology",
-      },
-    ],
     seo: {
       title: "Smart Lighting Installation | Luca Technologies",
       description:
@@ -292,6 +297,7 @@ export const services: Service[] = [
       "Zone control from your phone",
     ],
     audience: "residential",
+    featured: true,
     icon: "audio",
     images: [
       {
@@ -323,6 +329,7 @@ export const services: Service[] = [
       "Concealed speaker wiring",
     ],
     audience: "residential",
+    featured: true,
     icon: "speaker",
     images: [
       {
@@ -371,8 +378,10 @@ export const residentialServices = services.filter(
   (s) => s.audience === "residential",
 );
 
-/** Services shown on the home page grid. */
-export const featuredServices = residentialServices.filter((s) => s.featured);
+/** Services shown on the home page grid — only those with project photos. */
+export const featuredServices = residentialServices.filter(
+  (s) => (s.images?.length ?? 0) > 0,
+);
 
 export const featuredService =
   services.find((s) => s.featured) ?? services[0];

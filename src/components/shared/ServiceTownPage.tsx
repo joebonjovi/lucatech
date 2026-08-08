@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 function townHref(service: Service, town: SeoTown) {
@@ -34,6 +35,7 @@ export function ServiceTownPage({
   town: SeoTown;
 }) {
   const zipLabel = town.zips.join(" and ");
+  const images = service.images ?? [];
 
   return (
     <>
@@ -105,53 +107,86 @@ export function ServiceTownPage({
               </Button>
             </div>
           </div>
-          <aside className="rounded-3xl border border-border bg-gradient-to-br from-brand-soft to-white p-6 sm:p-8">
-            <h2 className="text-xl font-bold text-ink">
-              Why {town.name} homeowners choose us
-            </h2>
-            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted">
-              <li>
-                Local and owner-operated — based in Doylestown, minutes from{" "}
-                {town.name}
-              </li>
-              <li>Professional placement, clean wiring, and tidy installs</li>
-              <li>Honest recommendations that fit your home and budget</li>
-              <li>Setup, configuration, and a full walkthrough included</li>
-            </ul>
-            <div className="mt-6 rounded-2xl border border-border bg-white p-5">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">
-                Service area details
-              </h3>
-              <dl className="mt-3 space-y-2 text-sm text-ink">
-                <div className="flex justify-between gap-4">
-                  <dt className="text-muted">Town</dt>
-                  <dd className="font-medium">{town.name}, PA</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt className="text-muted">County</dt>
-                  <dd className="font-medium">{town.county}</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt className="text-muted">ZIP {town.zips.length > 1 ? "codes" : "code"}</dt>
-                  <dd className="font-medium">{town.zips.join(", ")}</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt className="text-muted">Phone</dt>
-                  <dd className="font-medium">
-                    <a href={siteConfig.phoneHref} className="hover:text-brand">
-                      {siteConfig.phone}
-                    </a>
-                  </dd>
-                </div>
-              </dl>
+          <aside className="space-y-5">
+            {images.length > 0 ? (
+              <div className="grid gap-4">
+                {images.map((image, index) => (
+                  <div
+                    key={image.src}
+                    className={`overflow-hidden rounded-3xl border border-border bg-surface shadow-sm ${
+                      index === 0 ? "aspect-[4/3]" : "aspect-[5/4]"
+                    }`}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={1200}
+                      height={900}
+                      className="h-full w-full object-cover"
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : null}
+
+            <div className="rounded-3xl border border-border bg-gradient-to-br from-brand-soft to-white p-6 sm:p-8">
+              <h2 className="text-xl font-bold text-ink">
+                Why {town.name} homeowners choose us
+              </h2>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted">
+                <li>
+                  Local and owner-operated — based in Doylestown, minutes from{" "}
+                  {town.name}
+                </li>
+                <li>Professional placement, clean wiring, and tidy installs</li>
+                <li>Honest recommendations that fit your home and budget</li>
+                <li>Setup, configuration, and a full walkthrough included</li>
+              </ul>
+              <div className="mt-6 rounded-2xl border border-border bg-white p-5">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">
+                  Service area details
+                </h3>
+                <dl className="mt-3 space-y-2 text-sm text-ink">
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-muted">Town</dt>
+                    <dd className="font-medium">{town.name}, PA</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-muted">County</dt>
+                    <dd className="font-medium">{town.county}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-muted">
+                      ZIP {town.zips.length > 1 ? "codes" : "code"}
+                    </dt>
+                    <dd className="font-medium">{town.zips.join(", ")}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-muted">Phone</dt>
+                    <dd className="font-medium">
+                      <a
+                        href={siteConfig.phoneHref}
+                        className="hover:text-brand"
+                      >
+                        {siteConfig.phone}
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+              <p className="mt-6 text-sm text-muted">
+                Not in {town.name}? See our full{" "}
+                <Link
+                  href="/service-area"
+                  className="font-medium text-brand hover:underline"
+                >
+                  service area
+                </Link>
+                .
+              </p>
             </div>
-            <p className="mt-6 text-sm text-muted">
-              Not in {town.name}? See our full{" "}
-              <Link href="/service-area" className="font-medium text-brand hover:underline">
-                service area
-              </Link>
-              .
-            </p>
           </aside>
         </div>
       </Section>
