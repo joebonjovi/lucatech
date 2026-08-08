@@ -142,19 +142,20 @@ export const services: Service[] = [
   },
   {
     id: "smart-home-installation",
-    title: "Smart Home Installation",
+    title: "Smart Home Installation & Automation",
     shortTitle: "Smart Home",
     slug: "smart-home-installation",
     href: "/smart-home-installation",
     description:
-      "Complete smart home setup — cameras, locks, lighting, thermostats, sensors, and voice assistants working together as one simple system.",
+      "Install and connect smart devices, then set up automations so lights, locks, thermostats, and cameras work together without the hassle.",
     longDescription:
-      "Bring your home technology together so it feels simple to use. We plan, install, and configure smart home devices — cameras, locks, lighting, thermostats, sensors, and voice assistants — and we are honest when brands or ecosystems do not work well together.",
+      "Bring your home technology together so it feels simple to use. We plan, install, and configure smart home devices — cameras, locks, lighting, thermostats, sensors, and voice assistants — then build practical automations and routines on top. Lights that turn on when you arrive, doors that lock at bedtime, thermostats that adjust on their own. And we are honest when brands or ecosystems do not work well together.",
     benefits: [
       "Whole-home planning and setup",
       "Compatible device selection",
+      "Custom routines and schedules",
+      "Arrival and departure automations",
       "Voice assistant pairing when supported",
-      "Single-app control where possible",
       "Clear guidance on ecosystem limits",
       "Homeowner-friendly walkthrough",
     ],
@@ -172,27 +173,29 @@ export const services: Service[] = [
       },
     ],
     seo: {
-      title: "Smart Home Installation | Luca Technologies",
+      title: "Smart Home Installation & Automation | Luca Technologies",
       description:
-        "Professional smart home installation for homeowners. Cameras, locks, lighting, thermostats, and voice assistants set up to work together.",
+        "Smart home installation and automation for homeowners. Devices installed, connected, and automated so your home responds the way you want.",
     },
   },
   {
     id: "home-wifi-installation",
-    title: "Home Wi-Fi Installation",
-    shortTitle: "Home Wi-Fi",
+    title: "Home Wi-Fi & Networking",
+    shortTitle: "Wi-Fi & Networking",
     slug: "home-wifi-installation",
     href: "/home-wifi-installation",
     description:
-      "Mesh and whole-home Wi-Fi that eliminates dead zones and supports cameras, streaming, home offices, and connected devices.",
+      "Mesh Wi-Fi, ethernet runs, switches, and organized network setups that eliminate dead zones and keep every device reliably online.",
     longDescription:
-      "Reliable Wi-Fi is the foundation of a connected home. We plan and install mesh and whole-home Wi-Fi so cameras, streaming, work-from-home setups, and smart devices stay connected in every room.",
+      "Reliable connectivity is the foundation of a connected home. We plan and install mesh Wi-Fi, wired ethernet, switches, and access points so cameras, streaming, work-from-home setups, and smart devices stay connected — with clean cable management and thorough testing.",
     benefits: [
       "Dead zone assessment",
-      "Mesh and whole-home coverage",
+      "Mesh and whole-home Wi-Fi",
+      "Ethernet cable runs",
+      "Switch and access point setup",
       "Support for cameras and streaming",
-      "Clean equipment placement",
-      "Network setup and testing",
+      "Organized equipment and cable management",
+      "Speed and reliability testing",
     ],
     audience: "residential",
     featured: true,
@@ -208,9 +211,9 @@ export const services: Service[] = [
       },
     ],
     seo: {
-      title: "Home Wi-Fi Installation | Luca Technologies",
+      title: "Home Wi-Fi & Network Installation | Luca Technologies",
       description:
-        "Home Wi-Fi and mesh network installation to eliminate dead zones and support cameras, streaming, and smart devices.",
+        "Home Wi-Fi and networking installation — mesh coverage, ethernet runs, and organized setups that keep cameras, streaming, and smart devices online.",
     },
   },
   {
@@ -269,66 +272,6 @@ export const services: Service[] = [
       title: "Smart Lighting Installation | Luca Technologies",
       description:
         "Smart lighting installation for homeowners. Smart switches, dimmers, schedules, and voice control professionally set up.",
-    },
-  },
-  {
-    id: "home-network-installation",
-    title: "Home Network Installation",
-    shortTitle: "Home Networking",
-    slug: "home-network-installation",
-    href: "/home-network-installation",
-    description:
-      "Wired ethernet runs, network racks, switches, and access points for fast, reliable connections everywhere.",
-    longDescription:
-      "Some things deserve a wire. We run ethernet to offices, TVs, cameras, and access points, install switches and organized network equipment, and build home networks that stay fast and reliable as you add devices.",
-    benefits: [
-      "Ethernet cable runs",
-      "Switch and router setup",
-      "Wired access point placement",
-      "Organized equipment and cable management",
-      "Speed and reliability testing",
-    ],
-    audience: "residential",
-    icon: "network",
-    images: [
-      {
-        src: "/images/projects/network-wiring.png",
-        alt: "Structured home network wiring being terminated and organized",
-      },
-      {
-        src: "/images/projects/wiring-diagnostics.png",
-        alt: "Testing punch-down wiring with a diagnostic tool",
-      },
-    ],
-    seo: {
-      title: "Home Network Installation | Luca Technologies",
-      description:
-        "Home network installation including ethernet runs, switches, and access points for fast, reliable whole-home connectivity.",
-    },
-  },
-  {
-    id: "home-automation",
-    title: "Home Automation",
-    shortTitle: "Home Automation",
-    slug: "home-automation",
-    href: "/home-automation",
-    description:
-      "Routines and automations that connect your devices — lights, locks, thermostats, and cameras responding automatically.",
-    longDescription:
-      "Make your home respond to you. We build automations and routines that tie your devices together — lights that turn on when you arrive, doors that lock at bedtime, thermostats that adjust on their own — using the platforms and devices you already trust.",
-    benefits: [
-      "Custom routines and schedules",
-      "Arrival and departure automations",
-      "Cross-device triggers",
-      "Voice assistant integration",
-      "Practical, reliable configurations",
-    ],
-    audience: "residential",
-    icon: "automation",
-    seo: {
-      title: "Home Automation Services | Luca Technologies",
-      description:
-        "Home automation setup for homeowners. Routines connecting lights, locks, thermostats, and cameras — professionally configured.",
     },
   },
   {

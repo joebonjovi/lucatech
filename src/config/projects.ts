@@ -26,7 +26,7 @@ export const projectPhotos: ProjectPhoto[] = [
     alt: "Home network wiring being organized",
     title: "Home networking",
     caption: "Structured wiring for reliable Wi-Fi and smart devices",
-    href: "/home-network-installation",
+    href: "/home-wifi-installation",
   },
   {
     src: "/images/projects/ceiling-device-install.png",

@@ -29,6 +29,26 @@ const nextConfig: NextConfig = {
         destination: "/smart-home-installation",
         permanent: true,
       },
+      {
+        source: "/home-network-installation",
+        destination: "/home-wifi-installation",
+        permanent: true,
+      },
+      {
+        source: "/home-network-installation/:town",
+        destination: "/home-wifi-installation/:town",
+        permanent: true,
+      },
+      {
+        source: "/home-automation",
+        destination: "/smart-home-installation",
+        permanent: true,
+      },
+      {
+        source: "/home-automation/:town",
+        destination: "/smart-home-installation/:town",
+        permanent: true,
+      },
     ];
   },
 };
