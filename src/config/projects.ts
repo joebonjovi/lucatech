@@ -33,7 +33,7 @@ export const projectPhotos: ProjectPhoto[] = [
     alt: "Installing a ceiling smart home device",
     title: "Speaker & ceiling installs",
     caption: "In-ceiling devices installed cleanly in finished rooms",
-    href: "/home-speaker-installation",
+    href: "/home-audio-installation",
   },
   {
     src: "/images/projects/attic-audio-setup.png",

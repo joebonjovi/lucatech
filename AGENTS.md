@@ -14,7 +14,7 @@ Besides top-level service pages (`/[service]`), every residential service also g
 - Sitemap includes all combinations (`src/app/sitemap.ts`)
 - These pages are **not** in site navigation; they exist for local SEO only
 
-Current matrix: **10 services × 9 towns = 90 town pages** (plus 10 top-level service pages).
+Current matrix: **8 services × 9 towns = 72 town pages** (plus 8 top-level service pages).
 
 Towns: Montgomeryville, North Wales, Lansdale, Doylestown, Blue Bell, Ambler, Chalfont, Warrington, Horsham.
 

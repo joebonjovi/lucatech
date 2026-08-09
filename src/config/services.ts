@@ -141,53 +141,29 @@ export const services: Service[] = [
   },
   {
     id: "smart-home-installation",
-    title: "Smart Home Installation",
+    title: "Smart Home Installation & Automation",
     shortTitle: "Smart Home",
     slug: "smart-home-installation",
     href: "/smart-home-installation",
     description:
-      "Complete smart home setup — cameras, locks, lighting, thermostats, sensors, and voice assistants working together as one simple system.",
+      "Install and connect smart devices, then set up automations so lights, locks, thermostats, and cameras work together without the hassle.",
     longDescription:
-      "Bring your home technology together so it feels simple to use. We plan, install, and configure smart home devices — cameras, locks, lighting, thermostats, sensors, and voice assistants — and we are honest when brands or ecosystems do not work well together.",
+      "Bring your home technology together so it feels simple to use. We plan, install, and configure smart home devices — cameras, locks, lighting, thermostats, sensors, and voice assistants — then build practical automations and routines on top. Lights that turn on when you arrive, doors that lock at bedtime, thermostats that adjust on their own. And we are honest when brands or ecosystems do not work well together.",
     benefits: [
       "Whole-home planning and setup",
       "Compatible device selection",
+      "Custom routines and schedules",
+      "Arrival and departure automations",
       "Voice assistant pairing when supported",
-      "Single-app control where possible",
       "Clear guidance on ecosystem limits",
       "Homeowner-friendly walkthrough",
     ],
     audience: "residential",
     icon: "integration",
     seo: {
-      title: "Smart Home Installation | Luca Technologies",
+      title: "Smart Home Installation & Automation | Luca Technologies",
       description:
-        "Professional smart home installation for homeowners. Cameras, locks, lighting, thermostats, and voice assistants set up to work together.",
-    },
-  },
-  {
-    id: "home-automation",
-    title: "Home Automation",
-    shortTitle: "Home Automation",
-    slug: "home-automation",
-    href: "/home-automation",
-    description:
-      "Routines and automations that connect your devices — lights, locks, thermostats, and cameras responding automatically.",
-    longDescription:
-      "Make your home respond to you. We build automations and routines that tie your devices together — lights that turn on when you arrive, doors that lock at bedtime, thermostats that adjust on their own — using the platforms and devices you already trust.",
-    benefits: [
-      "Custom routines and schedules",
-      "Arrival and departure automations",
-      "Cross-device triggers",
-      "Voice assistant integration",
-      "Practical, reliable configurations",
-    ],
-    audience: "residential",
-    icon: "automation",
-    seo: {
-      title: "Home Automation Services | Luca Technologies",
-      description:
-        "Home automation setup for homeowners. Routines connecting lights, locks, thermostats, and cameras — professionally configured.",
+        "Smart home installation and automation for homeowners. Devices installed, connected, and automated so your home responds the way you want.",
     },
   },
   {
@@ -281,18 +257,20 @@ export const services: Service[] = [
   },
   {
     id: "home-audio-installation",
-    title: "Home Audio Installation",
-    shortTitle: "Home Audio",
+    title: "Home Audio & Speaker Installation",
+    shortTitle: "Audio & Speakers",
     slug: "home-audio-installation",
     href: "/home-audio-installation",
     description:
-      "Whole-home and multi-room audio systems with clean installation and easy streaming control.",
+      "Whole-home audio and speaker systems — in-ceiling, outdoor, and multi-room setups with clean wiring and easy streaming control.",
     longDescription:
-      "Music in the kitchen, on the patio, and in the living room — all from your phone. We design and install whole-home and multi-room audio systems, wire them cleanly, and set up streaming so playing music anywhere is effortless.",
+      "Music in the kitchen, on the patio, and in the living room — all from your phone. We design and install whole-home and multi-room audio, mount and wire in-ceiling, in-wall, bookshelf, and outdoor speakers, hide the cabling, and set up streaming so playing music anywhere is effortless.",
     benefits: [
       "Multi-room audio design",
-      "In-ceiling and on-wall options",
+      "In-ceiling, in-wall, and outdoor speakers",
+      "Proper placement and mounting",
       "Streaming service setup",
+      "Amplifier and receiver hookup",
       "Clean, concealed wiring",
       "Zone control from your phone",
     ],
@@ -304,43 +282,15 @@ export const services: Service[] = [
         src: "/images/projects/attic-audio-setup.png",
         alt: "Configuring attic audio equipment for a whole-home sound system",
       },
-    ],
-    seo: {
-      title: "Home Audio Installation | Luca Technologies",
-      description:
-        "Whole-home and multi-room audio installation with clean wiring and simple streaming control for homeowners.",
-    },
-  },
-  {
-    id: "home-speaker-installation",
-    title: "Home Speaker Installation",
-    shortTitle: "Speaker Installation",
-    slug: "home-speaker-installation",
-    href: "/home-speaker-installation",
-    description:
-      "In-ceiling, in-wall, bookshelf, and outdoor speakers — mounted, wired, and tuned properly.",
-    longDescription:
-      "Great speakers only sound great when they are placed and installed well. We mount and wire in-ceiling, in-wall, bookshelf, and outdoor speakers, connect them to your amplifier or streaming system, and tune everything for the room.",
-    benefits: [
-      "In-ceiling and in-wall installation",
-      "Outdoor and patio speakers",
-      "Proper placement and mounting",
-      "Amplifier and receiver hookup",
-      "Concealed speaker wiring",
-    ],
-    audience: "residential",
-    featured: true,
-    icon: "speaker",
-    images: [
       {
         src: "/images/projects/ceiling-device-install.png",
         alt: "Installing an in-ceiling speaker or connected ceiling device",
       },
     ],
     seo: {
-      title: "Home Speaker Installation | Luca Technologies",
+      title: "Home Audio & Speaker Installation | Luca Technologies",
       description:
-        "Professional speaker installation — in-ceiling, in-wall, and outdoor speakers mounted, wired, and tuned for your home.",
+        "Whole-home audio and speaker installation — multi-room systems, in-ceiling and outdoor speakers, clean wiring, and simple streaming control.",
     },
   },
 ];

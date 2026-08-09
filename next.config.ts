@@ -39,6 +39,26 @@ const nextConfig: NextConfig = {
         destination: "/home-wifi-installation/:town",
         permanent: true,
       },
+      {
+        source: "/home-automation",
+        destination: "/smart-home-installation",
+        permanent: true,
+      },
+      {
+        source: "/home-automation/:town",
+        destination: "/smart-home-installation/:town",
+        permanent: true,
+      },
+      {
+        source: "/home-speaker-installation",
+        destination: "/home-audio-installation",
+        permanent: true,
+      },
+      {
+        source: "/home-speaker-installation/:town",
+        destination: "/home-audio-installation/:town",
+        permanent: true,
+      },
     ];
   },
 };
