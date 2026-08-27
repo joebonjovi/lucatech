@@ -14,7 +14,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: `${siteConfig.name} | Home Security Camera & Smart Home Installation`,
+  title: `Home Security Camera & Smart Home Installation in Doylestown, PA | ${siteConfig.name}`,
   description: siteConfig.tagline,
   path: "/",
 });

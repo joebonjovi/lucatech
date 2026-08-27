@@ -6,9 +6,10 @@ import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Contact | Request a Free Consultation | Luca Technologies",
+  title:
+    "Contact | Free Consultation in Doylestown, PA | Luca Technologies",
   description:
-    "Tell us about your home technology project. Request a free consultation for security cameras, doorbells, smart locks, Wi-Fi, and more.",
+    "Tell us about your home technology project in Doylestown, PA or a surrounding community. Request a free consultation for security cameras, doorbells, smart locks, Wi-Fi, and more.",
   path: "/contact",
 });
 

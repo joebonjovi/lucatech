@@ -10,9 +10,10 @@ import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Service Area | Smart Home Installation Near Me | Luca Technologies",
+  title:
+    "Service Area | Doylestown, PA Smart Home Installation | Luca Technologies",
   description:
-    "Luca Technologies provides residential security camera and smart home installation in Doylestown, PA and surrounding communities.",
+    "Luca Technologies provides residential security camera and smart home installation in Doylestown, PA and surrounding Bucks and Montgomery County communities.",
   path: "/service-area",
 });
 

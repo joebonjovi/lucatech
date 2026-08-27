@@ -8,7 +8,7 @@ export const siteConfig = {
   name: "Luca Technologies",
   legalName: "Luca Technologies",
   tagline:
-    "Professional smart home security and technology installation for safer, more connected homes.",
+    "Professional smart home security and technology installation in Doylestown, PA — serving homeowners across Bucks and Montgomery County.",
   shortDescription:
     "Residential smart home security and technology installation",
   phone: "445-205-4958",
