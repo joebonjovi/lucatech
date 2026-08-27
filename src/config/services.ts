@@ -38,8 +38,9 @@ export type ServiceIconName =
   | "theater";
 
 /**
- * Residential services are shown site-wide. Each service has a generic page
- * at its top-level href plus one page per SEO town (see service-area.ts).
+ * Residential services are shown site-wide. Each service has one page at its
+ * top-level href, SEO-targeted to Doylestown, PA (our home base) while noting
+ * the surrounding communities we also serve.
  * The home page grid features services that have project photos (`images`).
  */
 export const services: Service[] = [
@@ -77,9 +78,10 @@ export const services: Service[] = [
       },
     ],
     seo: {
-      title: "Home Security Camera Installation | Luca Technologies",
+      title:
+        "Security Camera Installation in Doylestown, PA | Luca Technologies",
       description:
-        "Residential security camera installation in Doylestown, PA and surrounding communities. Professional placement, clean installs, and mobile viewing setup for homeowners.",
+        "Home security camera installation in Doylestown, PA. Professional placement, clean wiring, and mobile viewing — also serving Chalfont, Warrington, New Britain, and nearby Bucks and Montgomery County towns.",
     },
   },
   {
@@ -109,9 +111,10 @@ export const services: Service[] = [
       },
     ],
     seo: {
-      title: "Video Doorbell Installation | Luca Technologies",
+      title:
+        "Video Doorbell Installation in Doylestown, PA | Luca Technologies",
       description:
-        "Professional video doorbell installation for homeowners. Wired or wireless setup with mobile alerts and remote access.",
+        "Video doorbell installation for Doylestown, PA homeowners. Wired or wireless setup with mobile alerts and remote access — also serving Warrington, Chalfont, Jamison, and surrounding communities.",
     },
   },
   {
@@ -134,9 +137,9 @@ export const services: Service[] = [
     audience: "residential",
     icon: "lock",
     seo: {
-      title: "Smart Lock Installation | Luca Technologies",
+      title: "Smart Lock Installation in Doylestown, PA | Luca Technologies",
       description:
-        "Smart lock installation for residential homes. Keypad and app-controlled locks installed and configured professionally.",
+        "Smart lock installation for homes in Doylestown, PA. Keypad and app-controlled locks installed and configured professionally — also serving Buckingham, New Britain, Furlong, and nearby towns.",
     },
   },
   {
@@ -161,9 +164,10 @@ export const services: Service[] = [
     audience: "residential",
     icon: "integration",
     seo: {
-      title: "Smart Home Installation & Automation | Luca Technologies",
+      title:
+        "Smart Home Installation & Automation in Doylestown, PA | Luca Technologies",
       description:
-        "Smart home installation and automation for homeowners. Devices installed, connected, and automated so your home responds the way you want.",
+        "Smart home installation and automation in Doylestown, PA. Devices installed, connected, and automated the way you want — also serving Lansdale, North Wales, Warrington, and surrounding communities.",
     },
   },
   {
@@ -199,9 +203,10 @@ export const services: Service[] = [
       },
     ],
     seo: {
-      title: "Home Wi-Fi & Network Installation | Luca Technologies",
+      title:
+        "Home Wi-Fi & Network Installation in Doylestown, PA | Luca Technologies",
       description:
-        "Home Wi-Fi and networking installation — mesh coverage, ethernet runs, and organized setups that keep cameras, streaming, and smart devices online.",
+        "Home Wi-Fi and network installation in Doylestown, PA — mesh coverage, ethernet runs, and organized setups. Also serving Chalfont, Warwick, Plumsteadville, and nearby Bucks and Montgomery County towns.",
     },
   },
   {
@@ -225,9 +230,10 @@ export const services: Service[] = [
     audience: "residential",
     icon: "theater",
     seo: {
-      title: "Home Theater Installation | Luca Technologies",
+      title:
+        "Home Theater Installation in Doylestown, PA | Luca Technologies",
       description:
-        "Professional home theater installation — TV mounting, surround sound, projectors, and hidden wiring for homeowners.",
+        "Home theater installation in Doylestown, PA — TV mounting, surround sound, projectors, and hidden wiring. Also serving Buckingham, Warrington, Horsham, and surrounding communities.",
     },
   },
   {
@@ -250,9 +256,10 @@ export const services: Service[] = [
     audience: "residential",
     icon: "lighting",
     seo: {
-      title: "Smart Lighting Installation | Luca Technologies",
+      title:
+        "Smart Lighting Installation in Doylestown, PA | Luca Technologies",
       description:
-        "Smart lighting installation for homeowners. Smart switches, dimmers, schedules, and voice control professionally set up.",
+        "Smart lighting installation in Doylestown, PA. Smart switches, dimmers, schedules, and voice control professionally set up — also serving New Britain, Jamison, Ambler, and nearby towns.",
     },
   },
   {
@@ -288,9 +295,10 @@ export const services: Service[] = [
       },
     ],
     seo: {
-      title: "Home Audio & Speaker Installation | Luca Technologies",
+      title:
+        "Home Audio & Speaker Installation in Doylestown, PA | Luca Technologies",
       description:
-        "Whole-home audio and speaker installation — multi-room systems, in-ceiling and outdoor speakers, clean wiring, and simple streaming control.",
+        "Home audio and speaker installation in Doylestown, PA — multi-room systems, in-ceiling and outdoor speakers, and clean wiring. Also serving Furlong, Lahaska, Blue Bell, and surrounding communities.",
     },
   },
 ];

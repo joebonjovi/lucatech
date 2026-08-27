@@ -3,12 +3,17 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { ServiceIcon } from "@/components/ui/Icon";
 import { Section } from "@/components/ui/Section";
+import {
+  nearbyCommunitiesLabel,
+  primaryCity,
+} from "@/config/service-area";
 import type { Service } from "@/config/services";
 import { siteConfig } from "@/config/site";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export function buildServiceMetadata(service: Service): Metadata {
   return buildPageMetadata({
@@ -29,6 +34,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
             title: service.title,
             description: service.description,
             href: service.href,
+            areaServed: { city: primaryCity.name, zips: primaryCity.zips },
           }),
           breadcrumbSchema([
             { name: "Home", path: "/" },
@@ -38,7 +44,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
         ]}
       />
       <PageHero
-        title={service.title}
+        title={`${service.title} in ${primaryCity.label}`}
         description={service.longDescription}
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -128,7 +134,15 @@ export function ServiceDetailPage({ service }: { service: Service }) {
                 </li>
               </ul>
               <p className="mt-6 text-sm text-muted">
-                Serving {siteConfig.serviceAreaLabel}.
+                Based in {primaryCity.label} and proudly serving{" "}
+                {nearbyCommunitiesLabel}. See our full{" "}
+                <Link
+                  href="/service-area"
+                  className="font-semibold text-brand underline-offset-2 hover:underline"
+                >
+                  service area
+                </Link>
+                .
               </p>
             </div>
           </aside>

@@ -6,9 +6,10 @@ import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Smart Home & Security Installation Services | Luca Technologies",
+  title:
+    "Smart Home & Security Installation Services in Doylestown, PA | Luca Technologies",
   description:
-    "Residential services including security cameras, video doorbells, smart locks, smart lighting, Wi-Fi and networking, smart home installation and automation, home audio and speakers, and home theater in Doylestown, PA and surrounding communities.",
+    "Residential services in Doylestown, PA — security cameras, video doorbells, smart locks, smart lighting, Wi-Fi and networking, smart home automation, home audio, and home theater. Also serving surrounding Bucks and Montgomery County communities.",
   path: "/services",
 });
 

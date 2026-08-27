@@ -48,6 +48,8 @@ export function buildPageMetadata({
 }
 
 export const defaultKeywords = [
+  "security camera installation Doylestown PA",
+  "smart home installer Doylestown PA",
   "home security camera installation",
   "security camera installer",
   "residential security camera installation",
@@ -60,7 +62,7 @@ export const defaultKeywords = [
   "home technology installation",
   "security camera installation near me",
   "smart home installation near me",
-  "Montgomery County PA",
-  "Bucks County PA",
   "Doylestown PA",
+  "Bucks County PA",
+  "Montgomery County PA",
 ];

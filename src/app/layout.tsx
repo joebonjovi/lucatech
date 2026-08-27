@@ -13,7 +13,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
-    title: `${siteConfig.name} | Smart Home Security & Technology Installation`,
+    title: `${siteConfig.name} | Smart Home & Security Installation in Doylestown, PA`,
     description: siteConfig.tagline,
     path: "/",
   }),
