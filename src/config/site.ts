@@ -18,7 +18,7 @@ export const siteConfig = {
   url: siteUrl,
   logo: {
     src: "/images/logo.png",
-    width: 812,
+    width: 750,
     height: 200,
     alt: "Luca Technologies",
   },

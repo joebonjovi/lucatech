@@ -81,15 +81,15 @@ MARK_SQUARE_VIEWBOX = "59.5 4.5 67 67"
 
 # Custom squared "LUCA" letterforms (cap height 14, stroke 3.5, flat
 # terminals). The A is a pointed chevron with a blue triangle in its counter.
-LUCA_WIDTH = 90.5
+LUCA_WIDTH = 80.5
 LUCA_BODY = """
   <g fill="none" stroke="#0b192c" stroke-width="3.5">
     <path d="M1.75 0 V8.75 Q1.75 12.25 5.25 12.25 H15"/>
-    <path d="M25.75 0 V8.25 Q25.75 12.25 29.75 12.25 H34 Q38.25 12.25 38.25 8.25 V0"/>
-    <path d="M62.5 1.75 H52.5 Q49.75 1.75 49.75 4.5 V9.5 Q49.75 12.25 52.5 12.25 H62.5"/>
+    <path d="M21.75 0 V8.25 Q21.75 12.25 25.75 12.25 H30.25 Q34.25 12.25 34.25 8.25 V0"/>
+    <path d="M55.5 1.75 H45.5 Q42.75 1.75 42.75 4.5 V9.5 Q42.75 12.25 45.5 12.25 H55.5"/>
   </g>
-  <path d="M71 14 L81 0 L91 14 H86.9 L81 5.74 L75.1 14 Z" fill="#0b192c"/>
-  <path d="M78.1 14 L83.9 14 L81 9.7 Z" fill="#1a73c8"/>
+  <path d="M60.5 14 L70.5 0 L80.5 14 H76.4 L70.5 5.74 L64.6 14 Z" fill="#0b192c"/>
+  <path d="M67.6 14 L73.4 14 L70.5 9.7 Z" fill="#1a73c8"/>
 """
 
 
@@ -149,13 +149,13 @@ def build_lockup() -> Image.Image:
     luca_h_units = 14.5
     luca = render_svg(luca_svg(), round((LUCA_WIDTH + 0.5) * unit))
 
-    tech_font = load_font(96, 640)
+    tech_font = load_font(205, 800)
     probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
     tech_box = probe.textbbox((0, 0), "T", font=tech_font)
     tech_h = tech_box[3] - tech_box[1]
 
     gap_x = 96
-    gap_y = 88
+    gap_y = 40
     luca_h = round(luca_h_units * unit)
     block_h = luca_h + gap_y + tech_h
     block_top = round((height - block_h) / 2)
@@ -168,8 +168,8 @@ def build_lockup() -> Image.Image:
 
     # — TECHNOLOGIES — : navy dashes at both ends, justified blue caps between
     tech_y = block_top + luca_h + gap_y
-    dash_len = round(7.2 * unit / 2)
-    dash_h = 11
+    dash_len = round(4 * unit / 2)
+    dash_h = 20
     dash_cy = tech_y + tech_h // 2
     draw.rounded_rectangle(
         [text_x, dash_cy - dash_h // 2, text_x + dash_len, dash_cy + dash_h // 2],
@@ -186,7 +186,7 @@ def build_lockup() -> Image.Image:
         radius=dash_h // 2,
         fill=NAVY,
     )
-    pad = dash_len + 64
+    pad = dash_len + 40
     draw_justified_text(
         draw,
         (text_x + pad - tech_box[0], tech_y - tech_box[1]),
