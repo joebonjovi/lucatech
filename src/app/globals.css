@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --color-charcoal: #0f172a;
-  --color-blue: #2563eb;
-  --color-blue-dark: #1d4ed8;
-  --color-blue-soft: #eff6ff;
-  --color-slate: #64748b;
-  --color-border: #e2e8f0;
-  --color-surface: #f8fafc;
+  /* 2026 brand palette: deep navy, electric blue, sky-blue accent */
+  --color-charcoal: #071a30;
+  --color-blue: #0669ee;
+  --color-blue-dark: #0553c2;
+  --color-blue-light: #2d94f8;
+  --color-blue-soft: #eaf3fe;
+  --color-slate: #5c6b80;
+  --color-border: #dde4ee;
+  --color-surface: #f7f9fc;
   --color-white: #ffffff;
   --background: var(--color-white);
   --foreground: var(--color-charcoal);
@@ -18,6 +20,7 @@
   --color-foreground: var(--foreground);
   --color-brand: var(--color-blue);
   --color-brand-dark: var(--color-blue-dark);
+  --color-brand-light: var(--color-blue-light);
   --color-brand-soft: var(--color-blue-soft);
   --color-ink: var(--color-charcoal);
   --color-muted: var(--color-slate);
