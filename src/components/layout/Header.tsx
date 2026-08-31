@@ -63,7 +63,7 @@ export function Header() {
               alt={siteConfig.logo.alt}
               width={siteConfig.logo.width}
               height={siteConfig.logo.height}
-              className="h-11 w-auto sm:h-14"
+              className="h-8 w-auto sm:h-10"
               priority
             />
           </Link>

@@ -1,37 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -6.0 100 100" role="img" aria-label="Luca Technologies">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="59.5 4.5 67 67" role="img" aria-label="Luca Technologies">
   <defs>
-    <linearGradient id="lt-wall" x1="75" y1="28" x2="72" y2="71" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0f3f7e"/>
-      <stop offset="1" stop-color="#2d94f8"/>
+    <linearGradient id="lt-wall" x1="107" y1="22" x2="121" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b192c"/>
+      <stop offset="0.4" stop-color="#0d55a8"/>
+      <stop offset="1" stop-color="#2e8fe9"/>
     </linearGradient>
-    <linearGradient id="lt-t" x1="40" y1="47" x2="66" y2="70" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0d5cb8"/>
-      <stop offset="1" stop-color="#2d94f8"/>
+    <linearGradient id="lt-t" x1="90" y1="42" x2="106" y2="66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b5cb4"/>
+      <stop offset="1" stop-color="#2e8fe9"/>
     </linearGradient>
   </defs>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Navy: bottom-left hook, left wall, roof up to the chimney -->
-    <path d="M43.5 70.5 H16.5 Q12 70.5 12 66 V36.5 L45.5 11 L63.5 24.6"
-          stroke="#071a30" stroke-width="7"/>
-    <!-- Chimney: filled, bottom follows the roof slope -->
-    <path d="M63 15.2 Q63 13.5 64.7 13.5 H70.3 Q72 13.5 72 15.2 V30.9 L63 24.1 Z"
-          fill="#071a30"/>
-    <!-- Blue: right roof segment, right wall, bottom-right hook -->
-    <path d="M72.6 31.6 L76.5 34.5 Q79 36.4 79 39.7 V64.5 Q79 70.6 72.8 70.8 L63.5 71"
-          stroke="url(#lt-wall)" stroke-width="7"/>
-    <!-- L monogram -->
-    <path d="M23 37.5 V57 Q23 60.5 26.5 60.5 H43"
-          stroke="#071a30" stroke-width="7"/>
-    <!-- T bar -->
-    <path d="M40.5 47 H66" stroke="url(#lt-t)" stroke-width="6.6"/>
-    <!-- T stem with chisel bottom -->
-    <path d="M52.4 47 H58.9 V69.8 L52.4 63.2 Z" fill="url(#lt-t)"/>
-    <!-- Windows -->
-    <g fill="#0b63dd">
-      <rect x="40.6" y="28.6" width="3.7" height="3.7" rx="0.6"/>
-      <rect x="46.6" y="28.6" width="3.7" height="3.7" rx="0.6"/>
-      <rect x="40.6" y="34.6" width="3.7" height="3.7" rx="0.6"/>
-      <rect x="46.6" y="34.6" width="3.7" height="3.7" rx="0.6"/>
+  <g stroke-linejoin="round">
+    <!-- Navy house: bottom edge (left of T stem), left wall, roof to chimney -->
+    <path d="M95.6 64.3 H66.2 Q63.5 64.3 63.5 61.6 V34.4 L93 11.5 L105.9 21.5"
+          fill="none" stroke="#0b192c" stroke-width="3.8"/>
+    <!-- Chimney: parallelogram following the roof slope -->
+    <path d="M105.8 15.4 Q105.8 14 107.2 14 H111.9 Q113.3 14 113.3 15.4 V26.5 L105.8 20.7 Z"
+          fill="#0b192c"/>
+    <!-- Right roof + wall + bottom edge: continuous stroke, navy fading to blue -->
+    <path d="M105.4 21.1 L120.4 32.8 Q122.5 34.4 122.5 37 V61.6 Q122.5 64.3 119.8 64.3 H107.8"
+          fill="none" stroke="url(#lt-wall)" stroke-width="3.8"/>
+    <!-- L: flat navy letterform -->
+    <path d="M74.5 35.5 H81.5 V52 H95.5 V58.5 H77.2 Q74.5 58.5 74.5 55.8 Z"
+          fill="#0b192c"/>
+    <!-- T: blue bar + stem with chisel bottom, dips through the base line -->
+    <rect x="89.5" y="41.8" width="24.5" height="6" rx="0.8" fill="url(#lt-t)"/>
+    <path d="M97.6 47.8 H104.6 V66.6 L97.6 61 Z" fill="url(#lt-t)"/>
+    <!-- Window: 2x2 panes -->
+    <g fill="#0b6dc8">
+      <rect x="88.4" y="28.8" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="94.2" y="28.8" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="88.4" y="34.6" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="94.2" y="34.6" width="4.3" height="4.3" rx="0.5"/>
     </g>
   </g>
 </svg>

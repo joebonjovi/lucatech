@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  /* 2026 brand palette: deep navy, electric blue, sky-blue accent */
-  --color-charcoal: #071a30;
-  --color-blue: #0669ee;
-  --color-blue-dark: #0553c2;
-  --color-blue-light: #2d94f8;
-  --color-blue-soft: #eaf3fe;
+  /* 2026 brand palette: deep navy, azure blue, sky-blue accent */
+  --color-charcoal: #0b192c;
+  --color-blue: #0f6cc8;
+  --color-blue-dark: #0a54a0;
+  --color-blue-light: #2e8fe9;
+  --color-blue-soft: #eaf3fd;
   --color-slate: #5c6b80;
   --color-border: #dde4ee;
   --color-surface: #f7f9fc;

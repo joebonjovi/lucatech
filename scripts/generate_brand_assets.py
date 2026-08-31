@@ -1,7 +1,7 @@
 """Generate all Luca Technologies brand assets from the vector logo mark.
 
-The house/LT mark (from the 2026 brand sheet) is defined once as SVG below and
-every asset is derived from it:
+The house/LT mark and the custom LUCA letterforms (from the 2026 brand
+lockup) are defined once as SVG below and every asset is derived from them:
 
   - src/app/icon.svg            square SVG favicon
   - src/app/favicon.ico         16/32/48 multi-size icon
@@ -10,8 +10,8 @@ every asset is derived from it:
   - public/images/logo-mark.png transparent mark render
   - public/images/logo.png      horizontal lockup (mark + LUCA TECHNOLOGIES)
 
-Dependencies: pillow, cairosvg. The wordmark uses Plus Jakarta Sans (the site
-font); the variable TTF is downloaded to /tmp on first run.
+Dependencies: pillow, cairosvg. "TECHNOLOGIES" uses Plus Jakarta Sans (the
+site font); the variable TTF is downloaded to /tmp on first run.
 """
 
 from __future__ import annotations
@@ -27,8 +27,8 @@ ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "src" / "app"
 IMAGES = ROOT / "public" / "images"
 
-NAVY = "#071a30"
-BLUE = "#0669ee"
+NAVY = "#0b192c"
+BLUE = "#1a73c8"
 
 FONT_URL = (
     "https://github.com/google/fonts/raw/main/ofl/plusjakartasans/"
@@ -36,65 +36,80 @@ FONT_URL = (
 )
 FONT_PATH = Path("/tmp/PlusJakartaSans.ttf")
 
-# House + LT monogram mark, recreated as vectors from the brand sheet.
-MARK_VIEWBOX = (100, 88)
+# House + LT monogram mark, recreated as vectors from the brand lockup.
+# Flat square-cut style: navy roof/left side and L, blue right side and T.
 MARK_BODY = """
   <defs>
-    <linearGradient id="lt-wall" x1="75" y1="28" x2="72" y2="71" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0f3f7e"/>
-      <stop offset="1" stop-color="#2d94f8"/>
+    <linearGradient id="lt-wall" x1="107" y1="22" x2="121" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b192c"/>
+      <stop offset="0.4" stop-color="#0d55a8"/>
+      <stop offset="1" stop-color="#2e8fe9"/>
     </linearGradient>
-    <linearGradient id="lt-t" x1="40" y1="47" x2="66" y2="70" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0d5cb8"/>
-      <stop offset="1" stop-color="#2d94f8"/>
+    <linearGradient id="lt-t" x1="90" y1="42" x2="106" y2="66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b5cb4"/>
+      <stop offset="1" stop-color="#2e8fe9"/>
     </linearGradient>
   </defs>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Navy: bottom-left hook, left wall, roof up to the chimney -->
-    <path d="M43.5 70.5 H16.5 Q12 70.5 12 66 V36.5 L45.5 11 L63.5 24.6"
-          stroke="#071a30" stroke-width="7"/>
-    <!-- Chimney: filled, bottom follows the roof slope -->
-    <path d="M63 15.2 Q63 13.5 64.7 13.5 H70.3 Q72 13.5 72 15.2 V30.9 L63 24.1 Z"
-          fill="#071a30"/>
-    <!-- Blue: right roof segment, right wall, bottom-right hook -->
-    <path d="M72.6 31.6 L76.5 34.5 Q79 36.4 79 39.7 V64.5 Q79 70.6 72.8 70.8 L63.5 71"
-          stroke="url(#lt-wall)" stroke-width="7"/>
-    <!-- L monogram -->
-    <path d="M23 37.5 V57 Q23 60.5 26.5 60.5 H43"
-          stroke="#071a30" stroke-width="7"/>
-    <!-- T bar -->
-    <path d="M40.5 47 H66" stroke="url(#lt-t)" stroke-width="6.6"/>
-    <!-- T stem with chisel bottom -->
-    <path d="M52.4 47 H58.9 V69.8 L52.4 63.2 Z" fill="url(#lt-t)"/>
-    <!-- Windows -->
-    <g fill="#0b63dd">
-      <rect x="40.6" y="28.6" width="3.7" height="3.7" rx="0.6"/>
-      <rect x="46.6" y="28.6" width="3.7" height="3.7" rx="0.6"/>
-      <rect x="40.6" y="34.6" width="3.7" height="3.7" rx="0.6"/>
-      <rect x="46.6" y="34.6" width="3.7" height="3.7" rx="0.6"/>
+  <g stroke-linejoin="round">
+    <!-- Navy house: bottom edge (left of T stem), left wall, roof to chimney -->
+    <path d="M95.6 64.3 H66.2 Q63.5 64.3 63.5 61.6 V34.4 L93 11.5 L105.9 21.5"
+          fill="none" stroke="#0b192c" stroke-width="3.8"/>
+    <!-- Chimney: parallelogram following the roof slope -->
+    <path d="M105.8 15.4 Q105.8 14 107.2 14 H111.9 Q113.3 14 113.3 15.4 V26.5 L105.8 20.7 Z"
+          fill="#0b192c"/>
+    <!-- Right roof + wall + bottom edge: continuous stroke, navy fading to blue -->
+    <path d="M105.4 21.1 L120.4 32.8 Q122.5 34.4 122.5 37 V61.6 Q122.5 64.3 119.8 64.3 H107.8"
+          fill="none" stroke="url(#lt-wall)" stroke-width="3.8"/>
+    <!-- L: flat navy letterform -->
+    <path d="M74.5 35.5 H81.5 V52 H95.5 V58.5 H77.2 Q74.5 58.5 74.5 55.8 Z"
+          fill="#0b192c"/>
+    <!-- T: blue bar + stem with chisel bottom, dips through the base line -->
+    <rect x="89.5" y="41.8" width="24.5" height="6" rx="0.8" fill="url(#lt-t)"/>
+    <path d="M97.6 47.8 H104.6 V66.6 L97.6 61 Z" fill="url(#lt-t)"/>
+    <!-- Window: 2x2 panes -->
+    <g fill="#0b6dc8">
+      <rect x="88.4" y="28.8" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="94.2" y="28.8" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="88.4" y="34.6" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="94.2" y="34.6" width="4.3" height="4.3" rx="0.5"/>
     </g>
   </g>
 """
 
+MARK_RECT_VIEWBOX = "59.5 7.5 67 61"
+MARK_SQUARE_VIEWBOX = "59.5 4.5 67 67"
+
+# Custom squared "LUCA" letterforms (cap height 14, stroke 3.5, flat
+# terminals). The A is a pointed chevron with a blue triangle in its counter.
+LUCA_WIDTH = 90.5
+LUCA_BODY = """
+  <g fill="none" stroke="#0b192c" stroke-width="3.5">
+    <path d="M1.75 0 V8.75 Q1.75 12.25 5.25 12.25 H15"/>
+    <path d="M25.75 0 V8.25 Q25.75 12.25 29.75 12.25 H34 Q38.25 12.25 38.25 8.25 V0"/>
+    <path d="M62.5 1.75 H52.5 Q49.75 1.75 49.75 4.5 V9.5 Q49.75 12.25 52.5 12.25 H62.5"/>
+  </g>
+  <path d="M71 14 L81 0 L91 14 H86.9 L81 5.74 L75.1 14 Z" fill="#0b192c"/>
+  <path d="M78.1 14 L83.9 14 L81 9.7 Z" fill="#1a73c8"/>
+"""
+
 
 def mark_svg(*, square: bool = False) -> str:
-    w, h = MARK_VIEWBOX
-    if square:
-        # Center the mark on a square canvas (used for favicons).
-        pad = (w - h) / 2
-        viewbox = f"0 {-pad} {w} {w}"
-    else:
-        viewbox = f"0 0 {w} {h}"
+    viewbox = MARK_SQUARE_VIEWBOX if square else MARK_RECT_VIEWBOX
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{viewbox}" '
         f'role="img" aria-label="Luca Technologies">{MARK_BODY}</svg>'
     )
 
 
-def render_mark(width: int, *, square: bool = False) -> Image.Image:
-    png = cairosvg.svg2png(
-        bytestring=mark_svg(square=square).encode(), output_width=width
+def luca_svg() -> str:
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'viewBox="-0.25 -0.25 {LUCA_WIDTH + 0.5} 14.5">{LUCA_BODY}</svg>'
     )
+
+
+def render_svg(svg: str, width: int) -> Image.Image:
+    png = cairosvg.svg2png(bytestring=svg.encode(), output_width=width)
     return Image.open(io.BytesIO(png)).convert("RGBA")
 
 
@@ -106,67 +121,79 @@ def load_font(size: int, weight: int) -> ImageFont.FreeTypeFont:
     return font
 
 
-def draw_tracked_text(
+def draw_justified_text(
     draw: ImageDraw.ImageDraw,
     xy: tuple[float, float],
     text: str,
     font: ImageFont.FreeTypeFont,
     fill: str,
-    total_width: float | None = None,
-    tracking: float = 0.0,
-) -> float:
-    """Draw text with letter-spacing; justify to total_width when given."""
+    total_width: float,
+) -> None:
+    """Draw text letter-spaced so it spans exactly total_width."""
     widths = [draw.textlength(ch, font=font) for ch in text]
-    if total_width is not None and len(text) > 1:
-        tracking = (total_width - sum(widths)) / (len(text) - 1)
+    tracking = (total_width - sum(widths)) / (len(text) - 1)
     x, y = xy
     for ch, w in zip(text, widths):
         draw.text((x, y), ch, font=font, fill=fill)
         x += w + tracking
-    return x - tracking
 
 
 def build_lockup() -> Image.Image:
-    """Horizontal lockup: mark on the left, LUCA / TECHNOLOGIES on the right."""
+    """Horizontal lockup: mark left, LUCA / — TECHNOLOGIES — right."""
     height = 800
-    mark_w = round(height * MARK_VIEWBOX[0] / MARK_VIEWBOX[1])
-    mark = render_mark(mark_w)
+    unit = 25  # px per LUCA letterform unit
+    mark_w = round(height * 67 / 61)
+    mark = render_svg(mark_svg(), mark_w)
 
-    luca_font = load_font(460, 800)
-    tech_font = load_font(104, 700)
+    luca_w = round(LUCA_WIDTH * unit)
+    luca_h_units = 14.5
+    luca = render_svg(luca_svg(), round((LUCA_WIDTH + 0.5) * unit))
 
+    tech_font = load_font(96, 640)
     probe = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
-    luca_box = probe.textbbox((0, 0), "LUCA", font=luca_font)
-    luca_w = luca_box[2] - luca_box[0]
-    luca_h = luca_box[3] - luca_box[1]
     tech_box = probe.textbbox((0, 0), "T", font=tech_font)
     tech_h = tech_box[3] - tech_box[1]
 
-    gap_x = 90
-    gap_y = 56
-    text_x = mark_w + gap_x
+    gap_x = 96
+    gap_y = 88
+    luca_h = round(luca_h_units * unit)
     block_h = luca_h + gap_y + tech_h
-    block_top = (height - block_h) / 2
+    block_top = round((height - block_h) / 2)
+    text_x = mark_w + gap_x
 
-    canvas = Image.new(
-        "RGBA", (text_x + luca_w + 24, height), (0, 0, 0, 0)
-    )
+    canvas = Image.new("RGBA", (text_x + luca_w + 12, height), (0, 0, 0, 0))
     canvas.alpha_composite(mark, (0, 0))
+    canvas.alpha_composite(luca, (text_x, block_top))
     draw = ImageDraw.Draw(canvas)
 
-    draw.text(
-        (text_x - luca_box[0], block_top - luca_box[1]),
-        "LUCA",
-        font=luca_font,
+    # — TECHNOLOGIES — : navy dashes at both ends, justified blue caps between
+    tech_y = block_top + luca_h + gap_y
+    dash_len = round(7.2 * unit / 2)
+    dash_h = 11
+    dash_cy = tech_y + tech_h // 2
+    draw.rounded_rectangle(
+        [text_x, dash_cy - dash_h // 2, text_x + dash_len, dash_cy + dash_h // 2],
+        radius=dash_h // 2,
         fill=NAVY,
     )
-    draw_tracked_text(
+    draw.rounded_rectangle(
+        [
+            text_x + luca_w - dash_len,
+            dash_cy - dash_h // 2,
+            text_x + luca_w,
+            dash_cy + dash_h // 2,
+        ],
+        radius=dash_h // 2,
+        fill=NAVY,
+    )
+    pad = dash_len + 64
+    draw_justified_text(
         draw,
-        (text_x - tech_box[0], block_top + luca_h + gap_y - tech_box[1]),
+        (text_x + pad - tech_box[0], tech_y - tech_box[1]),
         "TECHNOLOGIES",
         tech_font,
         BLUE,
-        total_width=luca_w,
+        total_width=luca_w - 2 * pad,
     )
     return canvas
 
@@ -193,7 +220,7 @@ def main() -> None:
     icon_svg_path.write_text(mark_svg(square=True) + "\n")
     print(f"Wrote {icon_svg_path}")
 
-    mark = render_mark(1024)
+    mark = render_svg(mark_svg(), 1024)
     mark_path = IMAGES / "logo-mark.png"
     mark.save(mark_path)
     print(f"Wrote {mark_path}")
