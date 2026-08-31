@@ -1,29 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Luca Technologies">
-  <!-- Distilled from the Luca Technologies logo: house + plug mark -->
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Blue house shell (open bottom, small eaves) -->
-    <path
-      d="M8 28.5 L14.5 23.2 L32 9.2 L49.5 23.2 L56 28.5"
-      stroke="#1C68BC"
-      stroke-width="5.25"
-    />
-    <path d="M14.5 23.8 V54" stroke="#1C68BC" stroke-width="5.25" />
-    <path d="M49.5 23.8 V42" stroke="#1C68BC" stroke-width="5.25" />
-
-    <!-- Plug prongs -->
-    <path d="M27 24.2 V30.8 M37 24.2 V30.8" stroke="#0C182C" stroke-width="3.5" />
-
-    <!-- Plug body -->
-    <rect x="22" y="30.5" width="20" height="16.5" rx="3.2" fill="#0C182C" />
-
-    <!-- Cord curves out through the lower-right wall into a blue tip -->
-    <path
-      d="M32 47 C32 53.5 38.5 57 45 55.5 C49.5 54.5 52.5 51.5 54 48.5"
-      stroke="#0C182C"
-      stroke-width="4.25"
-    />
-    <!-- Navy segment completing the right wall where the cord exits -->
-    <path d="M49.5 42 V54" stroke="#0C182C" stroke-width="5.25" />
-    <circle cx="54.5" cy="47.2" r="3.4" fill="#1C68BC" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="59.5 4.5 67 67" role="img" aria-label="Luca Technologies">
+  <defs>
+    <linearGradient id="lt-wall" x1="107" y1="22" x2="121" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b192c"/>
+      <stop offset="0.4" stop-color="#0d55a8"/>
+      <stop offset="1" stop-color="#2e8fe9"/>
+    </linearGradient>
+    <linearGradient id="lt-t" x1="90" y1="42" x2="106" y2="66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b5cb4"/>
+      <stop offset="1" stop-color="#2e8fe9"/>
+    </linearGradient>
+  </defs>
+  <g stroke-linejoin="round">
+    <!-- Navy house: bottom edge (left of T stem), left wall, roof to chimney -->
+    <path d="M95.6 64.3 H66.2 Q63.5 64.3 63.5 61.6 V34.4 L93 11.5 L105.9 21.5"
+          fill="none" stroke="#0b192c" stroke-width="3.8"/>
+    <!-- Chimney: parallelogram following the roof slope -->
+    <path d="M105.8 15.4 Q105.8 14 107.2 14 H111.9 Q113.3 14 113.3 15.4 V26.5 L105.8 20.7 Z"
+          fill="#0b192c"/>
+    <!-- Right roof + wall + bottom edge: continuous stroke, navy fading to blue -->
+    <path d="M105.4 21.1 L120.4 32.8 Q122.5 34.4 122.5 37 V61.6 Q122.5 64.3 119.8 64.3 H107.8"
+          fill="none" stroke="url(#lt-wall)" stroke-width="3.8"/>
+    <!-- L: flat navy letterform -->
+    <path d="M74.5 35.5 H81.5 V52 H95.5 V58.5 H77.2 Q74.5 58.5 74.5 55.8 Z"
+          fill="#0b192c"/>
+    <!-- T: blue bar + stem with chisel bottom, dips through the base line -->
+    <rect x="89.5" y="41.8" width="24.5" height="6" rx="0.8" fill="url(#lt-t)"/>
+    <path d="M97.6 47.8 H104.6 V66.6 L97.6 61 Z" fill="url(#lt-t)"/>
+    <!-- Window: 2x2 panes -->
+    <g fill="#0b6dc8">
+      <rect x="88.4" y="28.8" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="94.2" y="28.8" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="88.4" y="34.6" width="4.3" height="4.3" rx="0.5"/>
+      <rect x="94.2" y="34.6" width="4.3" height="4.3" rx="0.5"/>
+    </g>
   </g>
 </svg>

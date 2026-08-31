@@ -108,7 +108,7 @@ export async function POST(request: Request) {
   ].join("\n");
 
   const htmlBody = `
-    <div style="font-family:system-ui,sans-serif;line-height:1.6;color:#0f172a">
+    <div style="font-family:system-ui,sans-serif;line-height:1.6;color:#0b192c">
       <h2 style="margin:0 0 12px">New home technology inquiry</h2>
       <table style="border-collapse:collapse">
         ${fields

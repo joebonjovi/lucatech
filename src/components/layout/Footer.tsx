@@ -21,7 +21,7 @@ export function Footer() {
               alt={siteConfig.logo.alt}
               width={siteConfig.logo.width}
               height={siteConfig.logo.height}
-              className="h-11 w-auto sm:h-12"
+              className="h-10 w-auto sm:h-11"
             />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">

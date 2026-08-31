@@ -63,7 +63,7 @@ export function Header() {
               alt={siteConfig.logo.alt}
               width={siteConfig.logo.width}
               height={siteConfig.logo.height}
-              className="h-11 w-auto sm:h-14"
+              className="h-9 w-auto sm:h-12"
               priority
             />
           </Link>
@@ -79,7 +79,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200",
+                    "rounded-lg px-2.5 py-2 text-sm font-medium transition-colors duration-200",
                     active
                       ? "bg-brand-soft text-brand"
                       : "text-ink/80 hover:bg-surface hover:text-ink",
@@ -91,7 +91,7 @@ export function Header() {
             })}
           </nav>
 
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden items-center gap-3 lg:flex">
             <a
               href={siteConfig.phoneHref}
               className="flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-brand"
