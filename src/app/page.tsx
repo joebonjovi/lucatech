@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { FeaturedCameras } from "@/components/home/FeaturedCameras";
 import { FAQ } from "@/components/home/FAQ";
@@ -58,7 +57,6 @@ export default function HomePage() {
           Tell us which areas need coverage, what equipment is already on site,
           and when we can access the property so we can scope your quote.
         </p>
-        <Button href="/contact#project-type" className="mt-5">Request a Commercial Quote</Button>
       </Section>
       <ServicesGrid />
       <FeaturedCameras />
