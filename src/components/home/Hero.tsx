@@ -61,14 +61,14 @@ export function Hero() {
             <Button href="/contact" size="lg" className="w-full sm:w-auto">
               {siteConfig.cta.primary}
             </Button>
-            <span className="hidden sm:inline-flex">
+            <span className="inline-flex">
               <Button
-                href="/services"
+                href="/#commercial"
                 size="lg"
                 variant="secondary"
                 className="border-white/20 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
               >
-                {siteConfig.cta.secondary}
+                Commercial Services
               </Button>
             </span>
           </div>

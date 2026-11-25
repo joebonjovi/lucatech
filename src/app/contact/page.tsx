@@ -9,7 +9,7 @@ export const metadata: Metadata = buildPageMetadata({
   title:
     "Contact | Free Consultation in Doylestown, PA | Luca Technologies",
   description:
-    "Tell us about your home technology project in Doylestown, PA or a surrounding community. Request a free consultation for security cameras, doorbells, smart locks, Wi-Fi, and more.",
+    "Tell us about your home or business technology project in Doylestown, PA or a surrounding community. Request a free consultation for security cameras, doorbells, smart locks, Wi-Fi, and more.",
   path: "/contact",
 });
 
@@ -18,7 +18,7 @@ export default function ContactPage() {
     <>
       <PageHero
         title={siteConfig.cta.contactHeading}
-        description="Share a few details about your home, the service you need, and whether you already purchased equipment. We will follow up to discuss next steps."
+        description="Request a quote for your home or business. For commercial projects, include the site location, your target timeline, and any access or scheduling requirements."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Contact" },

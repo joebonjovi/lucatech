@@ -29,6 +29,8 @@ export function ContactForm() {
       purchasedEquipment: data.get("purchasedEquipment") === "yes",
       description: String(data.get("description") ?? ""),
       company: String(data.get("company") ?? ""),
+      projectType: String(data.get("projectType") ?? ""),
+      organization: String(data.get("organization") ?? ""),
     };
 
     setStatus("submitting");
@@ -118,6 +120,30 @@ export function ContactForm() {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="Project type" htmlFor="project-type">
+          <select
+            id="project-type"
+            name="projectType"
+            className={inputClass() + " scroll-mt-28"}
+            defaultValue=""
+          >
+            <option value="">Select a project type</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+          </select>
+        </Field>
+        <Field label="Business or organization (optional)" htmlFor="organization">
+          <input
+            id="organization"
+            name="organization"
+            autoComplete="organization"
+            maxLength={200}
+            className={inputClass()}
+          />
+        </Field>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name" htmlFor="name" required error={hasError("name")}>
           <input
             id="name"
@@ -204,7 +230,7 @@ export function ContactForm() {
           required
           rows={5}
           className={inputClass(hasError("description"))}
-          placeholder="Tell us about the areas of your home, devices you already own, and what you want to accomplish."
+          placeholder="Tell us about the property, any equipment you already have, and your target timeline."
         />
       </Field>
 
@@ -268,7 +294,7 @@ export function ContactForm() {
         className="w-full bg-brand text-white hover:bg-brand-dark"
         disabled={status === "submitting"}
       >
-        {status === "submitting" ? "Sending…" : "Bring my idea to life"}
+        {status === "submitting" ? "Sending…" : "Request a quote"}
       </Button>
     </form>
   );

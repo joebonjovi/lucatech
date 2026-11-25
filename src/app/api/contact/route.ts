@@ -14,6 +14,8 @@ type ContactPayload = {
   purchasedEquipment?: boolean;
   description?: string;
   company?: string;
+  projectType?: string;
+  organization?: string;
 };
 
 const MAX_LEN = 5000;
@@ -49,6 +51,8 @@ export async function POST(request: Request) {
     return Response.json({ ok: true });
   }
 
+  const projectType = clean(payload.projectType, 40);
+  const organization = clean(payload.organization, 200);
   const name = clean(payload.name, 200);
   const phone = clean(payload.phone, 60);
   const email = clean(payload.email, 200);
@@ -100,6 +104,11 @@ export async function POST(request: Request) {
     ["Already purchased equipment", purchasedEquipment ? "Yes" : "No"],
   ];
 
+  if (projectType === "Residential" || projectType === "Commercial") {
+    fields.push(["Project type", projectType]);
+  }
+  if (organization) fields.push(["Business or organization", organization]);
+
   const textBody = [
     ...fields.map(([label, value]) => `${label}: ${value}`),
     "",
@@ -109,7 +118,7 @@ export async function POST(request: Request) {
 
   const htmlBody = `
     <div style="font-family:system-ui,sans-serif;line-height:1.6;color:#0b192c">
-      <h2 style="margin:0 0 12px">New home technology inquiry</h2>
+      <h2 style="margin:0 0 12px">New technology installation inquiry</h2>
       <table style="border-collapse:collapse">
         ${fields
           .map(
@@ -131,7 +140,7 @@ export async function POST(request: Request) {
       from: `${siteConfig.name} Website <${from}>`,
       to: [to],
       replyTo: email,
-      subject: `New inquiry: ${serviceType} — ${name}`,
+      subject: `${projectType === "Commercial" ? "New commercial inquiry" : "New inquiry"}: ${serviceType} — ${name}`,
       text: textBody,
       html: htmlBody,
     });

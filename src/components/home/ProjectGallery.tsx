@@ -12,7 +12,7 @@ export function ProjectGallery() {
     <Section id="projects" tone="surface">
       <SectionHeading
         eyebrow="On the job"
-        title="Real installs. Real homes."
+        title="Real installs. Real homes and businesses."
         description="A look at recent Luca Technologies work — doorbells, cameras, networking, and connected devices installed with care."
         align="center"
       />
