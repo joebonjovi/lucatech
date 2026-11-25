@@ -8,9 +8,9 @@ export const siteConfig = {
   name: "Luca Technologies",
   legalName: "Luca Technologies",
   tagline:
-    "Professional smart home security and technology installation in Doylestown, PA — serving homeowners across Bucks and Montgomery County.",
+    "Security cameras, Wi-Fi, and technology installation for homes and businesses in Doylestown, PA and across Bucks and Montgomery counties.",
   shortDescription:
-    "Residential smart home security and technology installation",
+    "Security and technology installation for homes and businesses",
   phone: "445-205-4958",
   phoneHref: "tel:+14452054958",
   email: "jluca@jgltechnologies.com",
@@ -46,10 +46,10 @@ export const siteConfig = {
     contactHeading: "Tell Us About Your Project",
   },
   hero: {
-    lead: "Making your life easier",
-    headline: "By making your home smarter",
+    lead: "Local installation and support",
+    headline: "Technology for homes and businesses",
     supporting:
-      "Cameras, doorbells, locks, and Wi-Fi — professionally installed, cleanly wired, and set up so everything just works.",
+      "Security cameras, Wi-Fi, smart locks, and displays for homes, offices, storefronts, and managed properties.",
   },
 } as const;
 
